@@ -1,0 +1,9 @@
+module Legalesign
+  module Internal
+    extend Legalesign::Internal::Util::SorbetRuntimeSupport
+
+    type file_input = Pathname | StringIO | IO | String | Legalesign::FilePart
+
+    OMIT: Object
+  end
+end

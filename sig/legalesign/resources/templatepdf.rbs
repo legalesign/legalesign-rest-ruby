@@ -1,0 +1,47 @@
+module Legalesign
+  module Resources
+    class Templatepdf
+      attr_reader fields: Legalesign::Resources::Templatepdf::Fields
+
+      def create: (
+        group: String,
+        pdf_file: String,
+        ?archive_upon_send: bool,
+        ?process_tags: bool,
+        ?title: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def retrieve: (
+        String pdf_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::TemplatePdf
+
+      def list: (
+        ?archive: String,
+        ?group: String,
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::TemplatepdfListResponse
+
+      def archive: (
+        String pdf_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def convert_tags: (
+        String pdf_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def get_edit_link: (
+        String pdf_id,
+        ?request_options: Legalesign::request_opts
+      ) -> String
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

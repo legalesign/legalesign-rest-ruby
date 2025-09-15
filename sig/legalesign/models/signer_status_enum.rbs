@@ -1,0 +1,44 @@
+module Legalesign
+  module Models
+    type signer_status_enum = 4 | 5 | 10 | 15 | 20 | 30 | 35 | 39 | 40 | 50 | 60
+
+    module SignerStatusEnum
+      extend Legalesign::Internal::Type::Enum
+
+      # Unsent
+      SIGNER_STATUS_ENUM_4: 4
+
+      # Schedule to send
+      SIGNER_STATUS_ENUM_5: 5
+
+      # Sent
+      SIGNER_STATUS_ENUM_10: 10
+
+      # Email opened
+      SIGNER_STATUS_ENUM_15: 15
+
+      # Visited
+      SIGNER_STATUS_ENUM_20: 20
+
+      # Fields completed
+      SIGNER_STATUS_ENUM_30: 30
+
+      # Fields complete except signature
+      SIGNER_STATUS_ENUM_35: 35
+
+      # Witness to sign
+      SIGNER_STATUS_ENUM_39: 39
+
+      # Signed
+      SIGNER_STATUS_ENUM_40: 40
+
+      # Downloaded
+      SIGNER_STATUS_ENUM_50: 50
+
+      # Rejected
+      SIGNER_STATUS_ENUM_60: 60
+
+      def self?.values: -> ::Array[Legalesign::Models::signer_status_enum]
+    end
+  end
+end

@@ -1,0 +1,220 @@
+module Legalesign
+  module Models
+    type document_list_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::DocumentListResponse::Object]
+      }
+
+    class DocumentListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::Models::DocumentListResponse::Object]?
+
+      def objects=: (
+        ::Array[Legalesign::Models::DocumentListResponse::Object]
+      ) -> ::Array[Legalesign::Models::DocumentListResponse::Object]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::Models::DocumentListResponse::Object]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::DocumentListResponse::Object]
+      }
+
+      type object =
+        {
+          archived: bool,
+          auto_archive: bool,
+          cc_emails: String,
+          created: Time,
+          do_email: bool,
+          download_final: bool,
+          group: String,
+          modified: Time,
+          name: String,
+          pdftext: String,
+          redirect: String,
+          resource_uri: String,
+          return_signer_links: bool,
+          signers: ::Array[::Array[String]],
+          signers_in_order: Legalesign::Models::DocumentListResponse::Object::signers_in_order,
+          status: Legalesign::Models::document_status_enum,
+          tag: String,
+          :tag1 => String,
+          :tag2 => String,
+          template: String?,
+          templatepdf: String?,
+          text: String?,
+          user: String,
+          uuid: String
+        }
+
+      class Object < Legalesign::Internal::Type::BaseModel
+        attr_reader archived: bool?
+
+        def archived=: (bool) -> bool
+
+        attr_reader auto_archive: bool?
+
+        def auto_archive=: (bool) -> bool
+
+        attr_reader cc_emails: String?
+
+        def cc_emails=: (String) -> String
+
+        attr_reader created: Time?
+
+        def created=: (Time) -> Time
+
+        attr_reader do_email: bool?
+
+        def do_email=: (bool) -> bool
+
+        attr_reader download_final: bool?
+
+        def download_final=: (bool) -> bool
+
+        attr_reader group: String?
+
+        def group=: (String) -> String
+
+        attr_reader modified: Time?
+
+        def modified=: (Time) -> Time
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader pdftext: String?
+
+        def pdftext=: (String) -> String
+
+        attr_reader redirect: String?
+
+        def redirect=: (String) -> String
+
+        attr_reader resource_uri: String?
+
+        def resource_uri=: (String) -> String
+
+        attr_reader return_signer_links: bool?
+
+        def return_signer_links=: (bool) -> bool
+
+        attr_reader signers: ::Array[::Array[String]]?
+
+        def signers=: (::Array[::Array[String]]) -> ::Array[::Array[String]]
+
+        attr_reader signers_in_order: Legalesign::Models::DocumentListResponse::Object::signers_in_order?
+
+        def signers_in_order=: (
+          Legalesign::Models::DocumentListResponse::Object::signers_in_order
+        ) -> Legalesign::Models::DocumentListResponse::Object::signers_in_order
+
+        attr_reader status: Legalesign::Models::document_status_enum?
+
+        def status=: (
+          Legalesign::Models::document_status_enum
+        ) -> Legalesign::Models::document_status_enum
+
+        attr_reader tag: String?
+
+        def tag=: (String) -> String
+
+        attr_reader tag1: String?
+
+        def tag1=: (String) -> String
+
+        attr_reader tag2: String?
+
+        def tag2=: (String) -> String
+
+        attr_accessor template: String?
+
+        attr_accessor templatepdf: String?
+
+        attr_accessor text: String?
+
+        attr_reader user: String?
+
+        def user=: (String) -> String
+
+        attr_reader uuid: String?
+
+        def uuid=: (String) -> String
+
+        def initialize: (
+          ?archived: bool,
+          ?auto_archive: bool,
+          ?cc_emails: String,
+          ?created: Time,
+          ?do_email: bool,
+          ?download_final: bool,
+          ?group: String,
+          ?modified: Time,
+          ?name: String,
+          ?pdftext: String,
+          ?redirect: String,
+          ?resource_uri: String,
+          ?return_signer_links: bool,
+          ?signers: ::Array[::Array[String]],
+          ?signers_in_order: Legalesign::Models::DocumentListResponse::Object::signers_in_order,
+          ?status: Legalesign::Models::document_status_enum,
+          ?tag: String,
+          ?tag1: String,
+          ?tag2: String,
+          ?template: String?,
+          ?templatepdf: String?,
+          ?text: String?,
+          ?user: String,
+          ?uuid: String
+        ) -> void
+
+        def to_hash: -> {
+          archived: bool,
+          auto_archive: bool,
+          cc_emails: String,
+          created: Time,
+          do_email: bool,
+          download_final: bool,
+          group: String,
+          modified: Time,
+          name: String,
+          pdftext: String,
+          redirect: String,
+          resource_uri: String,
+          return_signer_links: bool,
+          signers: ::Array[::Array[String]],
+          signers_in_order: Legalesign::Models::DocumentListResponse::Object::signers_in_order,
+          status: Legalesign::Models::document_status_enum,
+          tag: String,
+          :tag1 => String,
+          :tag2 => String,
+          template: String?,
+          templatepdf: String?,
+          text: String?,
+          user: String,
+          uuid: String
+        }
+
+        type signers_in_order = 0 | 1
+
+        module SignersInOrder
+          extend Legalesign::Internal::Type::Enum
+
+          SIGNERS_IN_ORDER_0: 0
+          SIGNERS_IN_ORDER_1: 1
+
+          def self?.values: -> ::Array[Legalesign::Models::DocumentListResponse::Object::signers_in_order]
+        end
+      end
+    end
+  end
+end

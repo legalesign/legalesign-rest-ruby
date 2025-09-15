@@ -1,0 +1,113 @@
+module Legalesign
+  module Models
+    type group_list_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::GroupListResponse::Object]
+      }
+
+    class GroupListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::Models::GroupListResponse::Object]?
+
+      def objects=: (
+        ::Array[Legalesign::Models::GroupListResponse::Object]
+      ) -> ::Array[Legalesign::Models::GroupListResponse::Object]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::Models::GroupListResponse::Object]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::GroupListResponse::Object]
+      }
+
+      type object =
+        {
+          created: Time,
+          is_active: bool,
+          modified: Time,
+          name: String,
+          public_name: String,
+          resource_uri: String,
+          slug: String,
+          user: String,
+          xframe_allow: bool,
+          xframe_allow_pdf_edit: bool
+        }
+
+      class Object < Legalesign::Internal::Type::BaseModel
+        attr_reader created: Time?
+
+        def created=: (Time) -> Time
+
+        attr_reader is_active: bool?
+
+        def is_active=: (bool) -> bool
+
+        attr_reader modified: Time?
+
+        def modified=: (Time) -> Time
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader public_name: String?
+
+        def public_name=: (String) -> String
+
+        attr_reader resource_uri: String?
+
+        def resource_uri=: (String) -> String
+
+        attr_reader slug: String?
+
+        def slug=: (String) -> String
+
+        attr_reader user: String?
+
+        def user=: (String) -> String
+
+        attr_reader xframe_allow: bool?
+
+        def xframe_allow=: (bool) -> bool
+
+        attr_reader xframe_allow_pdf_edit: bool?
+
+        def xframe_allow_pdf_edit=: (bool) -> bool
+
+        def initialize: (
+          ?created: Time,
+          ?is_active: bool,
+          ?modified: Time,
+          ?name: String,
+          ?public_name: String,
+          ?resource_uri: String,
+          ?slug: String,
+          ?user: String,
+          ?xframe_allow: bool,
+          ?xframe_allow_pdf_edit: bool
+        ) -> void
+
+        def to_hash: -> {
+          created: Time,
+          is_active: bool,
+          modified: Time,
+          name: String,
+          public_name: String,
+          resource_uri: String,
+          slug: String,
+          user: String,
+          xframe_allow: bool,
+          xframe_allow_pdf_edit: bool
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,92 @@
+module Legalesign
+  module Models
+    type template_pdf =
+      {
+        created: Time,
+        group: String,
+        modified: Time,
+        page_count: Integer,
+        parties: String,
+        resource_uri: String,
+        signer_count: Integer,
+        title: String,
+        user: String,
+        uuid: String,
+        valid: bool
+      }
+
+    class TemplatePdf < Legalesign::Internal::Type::BaseModel
+      attr_reader created: Time?
+
+      def created=: (Time) -> Time
+
+      attr_reader group: String?
+
+      def group=: (String) -> String
+
+      attr_reader modified: Time?
+
+      def modified=: (Time) -> Time
+
+      attr_reader page_count: Integer?
+
+      def page_count=: (Integer) -> Integer
+
+      attr_reader parties: String?
+
+      def parties=: (String) -> String
+
+      attr_reader resource_uri: String?
+
+      def resource_uri=: (String) -> String
+
+      attr_reader signer_count: Integer?
+
+      def signer_count=: (Integer) -> Integer
+
+      attr_reader title: String?
+
+      def title=: (String) -> String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      attr_reader uuid: String?
+
+      def uuid=: (String) -> String
+
+      attr_reader valid: bool?
+
+      def valid=: (bool) -> bool
+
+      def initialize: (
+        ?created: Time,
+        ?group: String,
+        ?modified: Time,
+        ?page_count: Integer,
+        ?parties: String,
+        ?resource_uri: String,
+        ?signer_count: Integer,
+        ?title: String,
+        ?user: String,
+        ?uuid: String,
+        ?valid: bool
+      ) -> void
+
+      def to_hash: -> {
+        created: Time,
+        group: String,
+        modified: Time,
+        page_count: Integer,
+        parties: String,
+        resource_uri: String,
+        signer_count: Integer,
+        title: String,
+        user: String,
+        uuid: String,
+        valid: bool
+      }
+    end
+  end
+end

@@ -1,0 +1,50 @@
+module Legalesign
+  module Models
+    type attachment_upload_params =
+      {
+        filename: String,
+        group: String,
+        pdf_file: String,
+        description: String,
+        user: String
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class AttachmentUploadParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor filename: String
+
+      attr_accessor group: String
+
+      attr_accessor pdf_file: String
+
+      attr_reader description: String?
+
+      def description=: (String) -> String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      def initialize: (
+        filename: String,
+        group: String,
+        pdf_file: String,
+        ?description: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        filename: String,
+        group: String,
+        pdf_file: String,
+        description: String,
+        user: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

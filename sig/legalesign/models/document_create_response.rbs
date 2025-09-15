@@ -1,0 +1,15 @@
+module Legalesign
+  module Models
+    type document_create_response = { :signer_1 => String }
+
+    class DocumentCreateResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader signer_1: String?
+
+      def signer_1=: (String) -> String
+
+      def initialize: (?signer_1: String) -> void
+
+      def to_hash: -> { :signer_1 => String }
+    end
+  end
+end

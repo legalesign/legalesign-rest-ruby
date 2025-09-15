@@ -1,0 +1,3 @@
+module Legalesign
+  VERSION: String
+end

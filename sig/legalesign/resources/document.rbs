@@ -1,0 +1,86 @@
+module Legalesign
+  module Resources
+    class Document
+      def create: (
+        group: String,
+        name: String,
+        signers: ::Array[Legalesign::DocumentCreateParams::Signer],
+        ?append_pdf: bool,
+        ?auto_archive: bool,
+        ?cc_emails: String,
+        ?convert_sender_to_signer: bool,
+        ?do_email: bool,
+        ?footer: String,
+        ?footer_height: Integer,
+        ?header: String,
+        ?header_height: Integer,
+        ?pdf_password: String,
+        ?pdf_password_type: Legalesign::Models::DocumentCreateParams::pdf_password_type,
+        ?pdftext: ::Hash[Symbol, String],
+        ?redirect: String,
+        ?reminders: String,
+        ?return_signer_links: bool,
+        ?signature_type: Integer,
+        ?signers_in_order: bool,
+        ?signertext: ::Hash[Symbol, String],
+        ?strict_fields: bool,
+        ?tag: String,
+        ?tag1: String,
+        ?tag2: String,
+        ?template: String,
+        ?templatepdf: String,
+        ?text: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::DocumentCreateResponse
+
+      def retrieve: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::DocumentRetrieveResponse
+
+      def list: (
+        group: String,
+        ?archived: String,
+        ?created_gt: Time,
+        ?email: String,
+        ?limit: Integer,
+        ?modified_gt: Time,
+        ?nosigners: String,
+        ?offset: Integer,
+        ?status: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::DocumentListResponse
+
+      def archive: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def delete_permanently: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def download_audit_log: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> StringIO
+
+      def get_fields: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::document_get_fields_response
+
+      def preview: (
+        ?group: String,
+        ?signee_count: Integer,
+        ?text: String,
+        ?title: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

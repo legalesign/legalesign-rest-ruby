@@ -1,0 +1,5 @@
+module Legalesign
+  module Models
+    class TemplatepdfGetEditLinkResponse = String
+  end
+end

@@ -1,0 +1,123 @@
+module Legalesign
+  class AttachmentDeleteParams = Legalesign::Models::AttachmentDeleteParams
+
+  class AttachmentListParams = Legalesign::Models::AttachmentListParams
+
+  class AttachmentResponse = Legalesign::Models::AttachmentResponse
+
+  class AttachmentRetrieveParams = Legalesign::Models::AttachmentRetrieveParams
+
+  class AttachmentUploadParams = Legalesign::Models::AttachmentUploadParams
+
+  class DocumentArchiveParams = Legalesign::Models::DocumentArchiveParams
+
+  class DocumentCreateParams = Legalesign::Models::DocumentCreateParams
+
+  class DocumentDeletePermanentlyParams = Legalesign::Models::DocumentDeletePermanentlyParams
+
+  class DocumentDownloadAuditLogParams = Legalesign::Models::DocumentDownloadAuditLogParams
+
+  class DocumentGetFieldsParams = Legalesign::Models::DocumentGetFieldsParams
+
+  class DocumentListParams = Legalesign::Models::DocumentListParams
+
+  class DocumentPreviewParams = Legalesign::Models::DocumentPreviewParams
+
+  class DocumentRetrieveParams = Legalesign::Models::DocumentRetrieveParams
+
+  module DocumentStatusEnum = Legalesign::Models::DocumentStatusEnum
+
+  class GroupCreateParams = Legalesign::Models::GroupCreateParams
+
+  class GroupListParams = Legalesign::Models::GroupListParams
+
+  class GroupRetrieveParams = Legalesign::Models::GroupRetrieveParams
+
+  class GroupUpdateParams = Legalesign::Models::GroupUpdateParams
+
+  class InvitedDeleteParams = Legalesign::Models::InvitedDeleteParams
+
+  class InvitedListParams = Legalesign::Models::InvitedListParams
+
+  class ListMeta = Legalesign::Models::ListMeta
+
+  class MemberCreateParams = Legalesign::Models::MemberCreateParams
+
+  class MemberDeleteParams = Legalesign::Models::MemberDeleteParams
+
+  class MemberListParams = Legalesign::Models::MemberListParams
+
+  class MemberResponse = Legalesign::Models::MemberResponse
+
+  class MemberRetrieveParams = Legalesign::Models::MemberRetrieveParams
+
+  class NotificationListParams = Legalesign::Models::NotificationListParams
+
+  class PdfCreatePreviewParams = Legalesign::Models::PdfCreatePreviewParams
+
+  module PdfFieldValidationEnum = Legalesign::Models::PdfFieldValidationEnum
+
+  class PdfRetrieveParams = Legalesign::Models::PdfRetrieveParams
+
+  module PermissionsEnum = Legalesign::Models::PermissionsEnum
+
+  class SignerGetAccessLinkParams = Legalesign::Models::SignerGetAccessLinkParams
+
+  class SignerGetRejectionReasonParams = Legalesign::Models::SignerGetRejectionReasonParams
+
+  class SignerResetParams = Legalesign::Models::SignerResetParams
+
+  class SignerRetrieveFieldsParams = Legalesign::Models::SignerRetrieveFieldsParams
+
+  class SignerRetrieveParams = Legalesign::Models::SignerRetrieveParams
+
+  class SignerSendReminderParams = Legalesign::Models::SignerSendReminderParams
+
+  module SignerStatusEnum = Legalesign::Models::SignerStatusEnum
+
+  class StatusResponse = Legalesign::Models::StatusResponse
+
+  class StatusRetrieveAllParams = Legalesign::Models::StatusRetrieveAllParams
+
+  class StatusRetrieveParams = Legalesign::Models::StatusRetrieveParams
+
+  class SubscribeCreateWebhookParams = Legalesign::Models::SubscribeCreateWebhookParams
+
+  class TemplateArchiveParams = Legalesign::Models::TemplateArchiveParams
+
+  class TemplateCreateParams = Legalesign::Models::TemplateCreateParams
+
+  class TemplateListParams = Legalesign::Models::TemplateListParams
+
+  module Templatepdf = Legalesign::Models::Templatepdf
+
+  class TemplatePdf = Legalesign::Models::TemplatePdf
+
+  class TemplatepdfArchiveParams = Legalesign::Models::TemplatepdfArchiveParams
+
+  class TemplatepdfConvertTagsParams = Legalesign::Models::TemplatepdfConvertTagsParams
+
+  class TemplatepdfCreateParams = Legalesign::Models::TemplatepdfCreateParams
+
+  class TemplatepdfGetEditLinkParams = Legalesign::Models::TemplatepdfGetEditLinkParams
+
+  class TemplatepdfListParams = Legalesign::Models::TemplatepdfListParams
+
+  class TemplatepdfRetrieveParams = Legalesign::Models::TemplatepdfRetrieveParams
+
+  class TemplateRetrieveParams = Legalesign::Models::TemplateRetrieveParams
+
+  class TemplateUpdateParams = Legalesign::Models::TemplateUpdateParams
+
+  module TimezoneEnum = Legalesign::Models::TimezoneEnum
+
+  class UnsubscribeDeleteWebhookParams = Legalesign::Models::UnsubscribeDeleteWebhookParams
+
+  class UserCreateParams = Legalesign::Models::UserCreateParams
+
+  class UserRetrieveParams = Legalesign::Models::UserRetrieveParams
+
+  class UserUpdateParams = Legalesign::Models::UserUpdateParams
+
+  module WebhookEventFilterEnum = Legalesign::Models::WebhookEventFilterEnum
+end

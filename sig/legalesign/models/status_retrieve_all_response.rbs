@@ -1,0 +1,31 @@
+module Legalesign
+  module Models
+    type status_retrieve_all_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::StatusResponse]
+      }
+
+    class StatusRetrieveAllResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::StatusResponse]?
+
+      def objects=: (
+        ::Array[Legalesign::StatusResponse]
+      ) -> ::Array[Legalesign::StatusResponse]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::StatusResponse]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::StatusResponse]
+      }
+    end
+  end
+end

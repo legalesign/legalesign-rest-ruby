@@ -1,0 +1,11 @@
+module Legalesign
+  module Resources
+    class Notifications
+      def list: (
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::notification_list_response
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

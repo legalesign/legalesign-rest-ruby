@@ -1,0 +1,34 @@
+module Legalesign
+  module Models
+    type webhook_event_filter_enum =
+      :""
+      | :"document.*"
+      | :"document.created"
+      | :"document.rejected"
+      | :"document.finalPdfCreated"
+      | :"recipient.*"
+      | :"recipient.completed"
+      | :"recipient.rejected"
+      | :"recipient.emailOpened"
+      | :"recipient.visiting"
+      | :"recipient.bounced"
+
+    module WebhookEventFilterEnum
+      extend Legalesign::Internal::Type::Enum
+
+      EMPTY: :""
+      DOCUMENT: :"document.*"
+      DOCUMENT_CREATED: :"document.created"
+      DOCUMENT_REJECTED: :"document.rejected"
+      DOCUMENT_FINAL_PDF_CREATED: :"document.finalPdfCreated"
+      RECIPIENT: :"recipient.*"
+      RECIPIENT_COMPLETED: :"recipient.completed"
+      RECIPIENT_REJECTED: :"recipient.rejected"
+      RECIPIENT_EMAIL_OPENED: :"recipient.emailOpened"
+      RECIPIENT_VISITING: :"recipient.visiting"
+      RECIPIENT_BOUNCED: :"recipient.bounced"
+
+      def self?.values: -> ::Array[Legalesign::Models::webhook_event_filter_enum]
+    end
+  end
+end

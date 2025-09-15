@@ -1,0 +1,20 @@
+module Legalesign
+  module Models
+    type signer_get_rejection_reason_response =
+      { reason: String, status: Integer }
+
+    class SignerGetRejectionReasonResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader reason: String?
+
+      def reason=: (String) -> String
+
+      attr_reader status: Integer?
+
+      def status=: (Integer) -> Integer
+
+      def initialize: (?reason: String, ?status: Integer) -> void
+
+      def to_hash: -> { reason: String, status: Integer }
+    end
+  end
+end

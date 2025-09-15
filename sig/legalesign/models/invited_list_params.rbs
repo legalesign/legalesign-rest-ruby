@@ -1,0 +1,25 @@
+module Legalesign
+  module Models
+    type invited_list_params =
+      { group: String } & Legalesign::Internal::Type::request_parameters
+
+    class InvitedListParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_reader group: String?
+
+      def group=: (String) -> String
+
+      def initialize: (
+        ?group: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

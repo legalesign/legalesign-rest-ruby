@@ -1,0 +1,85 @@
+module Legalesign
+  module Models
+    type document_get_fields_response_item =
+      {
+        element_type: Legalesign::Models::DocumentGetFieldsResponseItem::element_type,
+        fieldorder: Integer?,
+        label: String,
+        label_extra: String?,
+        signer: Integer,
+        state: bool,
+        validation: Legalesign::Models::pdf_field_validation_enum?,
+        value: String
+      }
+
+    class DocumentGetFieldsResponseItem < Legalesign::Internal::Type::BaseModel
+      attr_reader element_type: Legalesign::Models::DocumentGetFieldsResponseItem::element_type?
+
+      def element_type=: (
+        Legalesign::Models::DocumentGetFieldsResponseItem::element_type
+      ) -> Legalesign::Models::DocumentGetFieldsResponseItem::element_type
+
+      attr_accessor fieldorder: Integer?
+
+      attr_reader label: String?
+
+      def label=: (String) -> String
+
+      attr_accessor label_extra: String?
+
+      attr_reader signer: Integer?
+
+      def signer=: (Integer) -> Integer
+
+      attr_reader state: bool?
+
+      def state=: (bool) -> bool
+
+      attr_accessor validation: Legalesign::Models::pdf_field_validation_enum?
+
+      attr_reader value: String?
+
+      def value=: (String) -> String
+
+      def initialize: (
+        ?element_type: Legalesign::Models::DocumentGetFieldsResponseItem::element_type,
+        ?fieldorder: Integer?,
+        ?label: String,
+        ?label_extra: String?,
+        ?signer: Integer,
+        ?state: bool,
+        ?validation: Legalesign::Models::pdf_field_validation_enum?,
+        ?value: String
+      ) -> void
+
+      def to_hash: -> {
+        element_type: Legalesign::Models::DocumentGetFieldsResponseItem::element_type,
+        fieldorder: Integer?,
+        label: String,
+        label_extra: String?,
+        signer: Integer,
+        state: bool,
+        validation: Legalesign::Models::pdf_field_validation_enum?,
+        value: String
+      }
+
+      type element_type = :signature | :initials | :admin | :text
+
+      module ElementType
+        extend Legalesign::Internal::Type::Enum
+
+        SIGNATURE: :signature
+        INITIALS: :initials
+        ADMIN: :admin
+        TEXT: :text
+
+        def self?.values: -> ::Array[Legalesign::Models::DocumentGetFieldsResponseItem::element_type]
+      end
+    end
+
+    type document_get_fields_response =
+      ::Array[Legalesign::Models::DocumentGetFieldsResponseItem]
+
+    DocumentGetFieldsResponse: Legalesign::Internal::Type::Converter
+  end
+end

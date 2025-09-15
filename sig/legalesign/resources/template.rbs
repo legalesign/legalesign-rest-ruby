@@ -1,0 +1,39 @@
+module Legalesign
+  module Resources
+    class Template
+      def create: (
+        group: String,
+        latest_text: String,
+        title: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def retrieve: (
+        String template_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::TemplateRetrieveResponse
+
+      def update: (
+        String template_id,
+        body: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def list: (
+        ?archive: String,
+        ?group: String,
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::TemplateListResponse
+
+      def archive: (
+        String template_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

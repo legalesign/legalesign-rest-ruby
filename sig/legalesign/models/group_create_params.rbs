@@ -1,0 +1,30 @@
+module Legalesign
+  module Models
+    type group_create_params =
+      { name: String, xframe_allow: bool }
+      & Legalesign::Internal::Type::request_parameters
+
+    class GroupCreateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor name: String
+
+      attr_reader xframe_allow: bool?
+
+      def xframe_allow=: (bool) -> bool
+
+      def initialize: (
+        name: String,
+        ?xframe_allow: bool,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        name: String,
+        xframe_allow: bool,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

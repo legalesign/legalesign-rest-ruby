@@ -1,0 +1,73 @@
+module Legalesign
+  module Models
+    type notification_list_response_item =
+      {
+        active: bool,
+        event_filter: Legalesign::Models::webhook_event_filter_enum,
+        group_id: Integer,
+        notify_when: Legalesign::Models::NotificationListResponseItem::notify_when,
+        url: String
+      }
+
+    class NotificationListResponseItem < Legalesign::Internal::Type::BaseModel
+      attr_reader active: bool?
+
+      def active=: (bool) -> bool
+
+      attr_reader event_filter: Legalesign::Models::webhook_event_filter_enum?
+
+      def event_filter=: (
+        Legalesign::Models::webhook_event_filter_enum
+      ) -> Legalesign::Models::webhook_event_filter_enum
+
+      attr_reader group_id: Integer?
+
+      def group_id=: (Integer) -> Integer
+
+      attr_reader notify_when: Legalesign::Models::NotificationListResponseItem::notify_when?
+
+      def notify_when=: (
+        Legalesign::Models::NotificationListResponseItem::notify_when
+      ) -> Legalesign::Models::NotificationListResponseItem::notify_when
+
+      attr_reader url: String?
+
+      def url=: (String) -> String
+
+      def initialize: (
+        ?active: bool,
+        ?event_filter: Legalesign::Models::webhook_event_filter_enum,
+        ?group_id: Integer,
+        ?notify_when: Legalesign::Models::NotificationListResponseItem::notify_when,
+        ?url: String
+      ) -> void
+
+      def to_hash: -> {
+        active: bool,
+        event_filter: Legalesign::Models::webhook_event_filter_enum,
+        group_id: Integer,
+        notify_when: Legalesign::Models::NotificationListResponseItem::notify_when,
+        url: String
+      }
+
+      type notify_when = 1 | 2 | 3 | 4 | 10
+
+      module NotifyWhen
+        extend Legalesign::Internal::Type::Enum
+
+        NOTIFY_WHEN_1: 1
+        NOTIFY_WHEN_2: 2
+        NOTIFY_WHEN_3: 3
+        NOTIFY_WHEN_4: 4
+        NOTIFY_WHEN_10: 10
+
+        def self?.values: -> ::Array[Legalesign::Models::NotificationListResponseItem::notify_when]
+      end
+    end
+
+    type notification_list_response =
+      ::Array[Legalesign::Models::NotificationListResponseItem]
+
+    NotificationListResponse: Legalesign::Internal::Type::Converter
+  end
+end

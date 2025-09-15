@@ -1,0 +1,66 @@
+module Legalesign
+  module Models
+    type status_response =
+      {
+        archived: bool,
+        download_final: bool,
+        resource_uri: String,
+        status: Legalesign::Models::signer_status_enum,
+        tag: String,
+        :tag1 => String,
+        :tag2 => String
+      }
+
+    class StatusResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader archived: bool?
+
+      def archived=: (bool) -> bool
+
+      attr_reader download_final: bool?
+
+      def download_final=: (bool) -> bool
+
+      attr_reader resource_uri: String?
+
+      def resource_uri=: (String) -> String
+
+      attr_reader status: Legalesign::Models::signer_status_enum?
+
+      def status=: (
+        Legalesign::Models::signer_status_enum
+      ) -> Legalesign::Models::signer_status_enum
+
+      attr_reader tag: String?
+
+      def tag=: (String) -> String
+
+      attr_reader tag1: String?
+
+      def tag1=: (String) -> String
+
+      attr_reader tag2: String?
+
+      def tag2=: (String) -> String
+
+      def initialize: (
+        ?archived: bool,
+        ?download_final: bool,
+        ?resource_uri: String,
+        ?status: Legalesign::Models::signer_status_enum,
+        ?tag: String,
+        ?tag1: String,
+        ?tag2: String
+      ) -> void
+
+      def to_hash: -> {
+        archived: bool,
+        download_final: bool,
+        resource_uri: String,
+        status: Legalesign::Models::signer_status_enum,
+        tag: String,
+        :tag1 => String,
+        :tag2 => String
+      }
+    end
+  end
+end

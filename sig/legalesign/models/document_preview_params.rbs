@@ -1,0 +1,44 @@
+module Legalesign
+  module Models
+    type document_preview_params =
+      { group: String, signee_count: Integer, text: String, title: String }
+      & Legalesign::Internal::Type::request_parameters
+
+    class DocumentPreviewParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_reader group: String?
+
+      def group=: (String) -> String
+
+      attr_reader signee_count: Integer?
+
+      def signee_count=: (Integer) -> Integer
+
+      attr_reader text: String?
+
+      def text=: (String) -> String
+
+      attr_reader title: String?
+
+      def title=: (String) -> String
+
+      def initialize: (
+        ?group: String,
+        ?signee_count: Integer,
+        ?text: String,
+        ?title: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        signee_count: Integer,
+        text: String,
+        title: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

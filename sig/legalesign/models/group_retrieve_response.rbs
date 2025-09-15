@@ -1,0 +1,134 @@
+module Legalesign
+  module Models
+    type group_retrieve_response =
+      {
+        created: Time,
+        default_email: String,
+        default_extraemail: String,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        is_active: bool,
+        members: ::Array[String],
+        modified: Time,
+        name: String,
+        pagesize: Integer,
+        public_name: String,
+        resource_uri: String,
+        slug: String,
+        user: String,
+        xframe_allow: bool,
+        xframe_allow_pdf_edit: bool
+      }
+
+    class GroupRetrieveResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader created: Time?
+
+      def created=: (Time) -> Time
+
+      attr_reader default_email: String?
+
+      def default_email=: (String) -> String
+
+      attr_reader default_extraemail: String?
+
+      def default_extraemail=: (String) -> String
+
+      attr_reader footer: String?
+
+      def footer=: (String) -> String
+
+      attr_reader footer_height: Integer?
+
+      def footer_height=: (Integer) -> Integer
+
+      attr_reader header: String?
+
+      def header=: (String) -> String
+
+      attr_reader is_active: bool?
+
+      def is_active=: (bool) -> bool
+
+      attr_reader members: ::Array[String]?
+
+      def members=: (::Array[String]) -> ::Array[String]
+
+      attr_reader modified: Time?
+
+      def modified=: (Time) -> Time
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader pagesize: Integer?
+
+      def pagesize=: (Integer) -> Integer
+
+      attr_reader public_name: String?
+
+      def public_name=: (String) -> String
+
+      attr_reader resource_uri: String?
+
+      def resource_uri=: (String) -> String
+
+      attr_reader slug: String?
+
+      def slug=: (String) -> String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      attr_reader xframe_allow: bool?
+
+      def xframe_allow=: (bool) -> bool
+
+      attr_reader xframe_allow_pdf_edit: bool?
+
+      def xframe_allow_pdf_edit=: (bool) -> bool
+
+      def initialize: (
+        ?created: Time,
+        ?default_email: String,
+        ?default_extraemail: String,
+        ?footer: String,
+        ?footer_height: Integer,
+        ?header: String,
+        ?is_active: bool,
+        ?members: ::Array[String],
+        ?modified: Time,
+        ?name: String,
+        ?pagesize: Integer,
+        ?public_name: String,
+        ?resource_uri: String,
+        ?slug: String,
+        ?user: String,
+        ?xframe_allow: bool,
+        ?xframe_allow_pdf_edit: bool
+      ) -> void
+
+      def to_hash: -> {
+        created: Time,
+        default_email: String,
+        default_extraemail: String,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        is_active: bool,
+        members: ::Array[String],
+        modified: Time,
+        name: String,
+        pagesize: Integer,
+        public_name: String,
+        resource_uri: String,
+        slug: String,
+        user: String,
+        xframe_allow: bool,
+        xframe_allow_pdf_edit: bool
+      }
+    end
+  end
+end

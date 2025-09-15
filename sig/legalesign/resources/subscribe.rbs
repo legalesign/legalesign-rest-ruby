@@ -1,0 +1,15 @@
+module Legalesign
+  module Resources
+    class Subscribe
+      def create_webhook: (
+        notify: String,
+        url: String,
+        ?event_filter: Legalesign::Models::webhook_event_filter_enum,
+        ?group: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

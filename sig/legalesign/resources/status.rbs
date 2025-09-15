@@ -1,0 +1,19 @@
+module Legalesign
+  module Resources
+    class Status
+      def retrieve: (
+        String doc_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::StatusResponse
+
+      def retrieve_all: (
+        ?filter: String,
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::StatusRetrieveAllResponse
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

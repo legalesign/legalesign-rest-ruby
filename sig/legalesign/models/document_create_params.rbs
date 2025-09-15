@@ -1,0 +1,386 @@
+module Legalesign
+  module Models
+    type document_create_params =
+      {
+        group: String,
+        name: String,
+        signers: ::Array[Legalesign::DocumentCreateParams::Signer],
+        append_pdf: bool,
+        auto_archive: bool,
+        cc_emails: String,
+        convert_sender_to_signer: bool,
+        do_email: bool,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        header_height: Integer,
+        pdf_password: String,
+        pdf_password_type: Legalesign::Models::DocumentCreateParams::pdf_password_type,
+        pdftext: ::Hash[Symbol, String],
+        redirect: String,
+        reminders: String,
+        return_signer_links: bool,
+        signature_type: Integer,
+        signers_in_order: bool,
+        signertext: ::Hash[Symbol, String],
+        strict_fields: bool,
+        tag: String,
+        :tag1 => String,
+        :tag2 => String,
+        template: String,
+        templatepdf: String,
+        text: String,
+        user: String
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class DocumentCreateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor group: String
+
+      attr_accessor name: String
+
+      attr_accessor signers: ::Array[Legalesign::DocumentCreateParams::Signer]
+
+      attr_reader append_pdf: bool?
+
+      def append_pdf=: (bool) -> bool
+
+      attr_reader auto_archive: bool?
+
+      def auto_archive=: (bool) -> bool
+
+      attr_reader cc_emails: String?
+
+      def cc_emails=: (String) -> String
+
+      attr_reader convert_sender_to_signer: bool?
+
+      def convert_sender_to_signer=: (bool) -> bool
+
+      attr_reader do_email: bool?
+
+      def do_email=: (bool) -> bool
+
+      attr_reader footer: String?
+
+      def footer=: (String) -> String
+
+      attr_reader footer_height: Integer?
+
+      def footer_height=: (Integer) -> Integer
+
+      attr_reader header: String?
+
+      def header=: (String) -> String
+
+      attr_reader header_height: Integer?
+
+      def header_height=: (Integer) -> Integer
+
+      attr_reader pdf_password: String?
+
+      def pdf_password=: (String) -> String
+
+      attr_reader pdf_password_type: Legalesign::Models::DocumentCreateParams::pdf_password_type?
+
+      def pdf_password_type=: (
+        Legalesign::Models::DocumentCreateParams::pdf_password_type
+      ) -> Legalesign::Models::DocumentCreateParams::pdf_password_type
+
+      attr_reader pdftext: ::Hash[Symbol, String]?
+
+      def pdftext=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+      attr_reader redirect: String?
+
+      def redirect=: (String) -> String
+
+      attr_reader reminders: String?
+
+      def reminders=: (String) -> String
+
+      attr_reader return_signer_links: bool?
+
+      def return_signer_links=: (bool) -> bool
+
+      attr_reader signature_type: Integer?
+
+      def signature_type=: (Integer) -> Integer
+
+      attr_reader signers_in_order: bool?
+
+      def signers_in_order=: (bool) -> bool
+
+      attr_reader signertext: ::Hash[Symbol, String]?
+
+      def signertext=: (::Hash[Symbol, String]) -> ::Hash[Symbol, String]
+
+      attr_reader strict_fields: bool?
+
+      def strict_fields=: (bool) -> bool
+
+      attr_reader tag: String?
+
+      def tag=: (String) -> String
+
+      attr_reader tag1: String?
+
+      def tag1=: (String) -> String
+
+      attr_reader tag2: String?
+
+      def tag2=: (String) -> String
+
+      attr_reader template: String?
+
+      def template=: (String) -> String
+
+      attr_reader templatepdf: String?
+
+      def templatepdf=: (String) -> String
+
+      attr_reader text: String?
+
+      def text=: (String) -> String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      def initialize: (
+        group: String,
+        name: String,
+        signers: ::Array[Legalesign::DocumentCreateParams::Signer],
+        ?append_pdf: bool,
+        ?auto_archive: bool,
+        ?cc_emails: String,
+        ?convert_sender_to_signer: bool,
+        ?do_email: bool,
+        ?footer: String,
+        ?footer_height: Integer,
+        ?header: String,
+        ?header_height: Integer,
+        ?pdf_password: String,
+        ?pdf_password_type: Legalesign::Models::DocumentCreateParams::pdf_password_type,
+        ?pdftext: ::Hash[Symbol, String],
+        ?redirect: String,
+        ?reminders: String,
+        ?return_signer_links: bool,
+        ?signature_type: Integer,
+        ?signers_in_order: bool,
+        ?signertext: ::Hash[Symbol, String],
+        ?strict_fields: bool,
+        ?tag: String,
+        ?tag1: String,
+        ?tag2: String,
+        ?template: String,
+        ?templatepdf: String,
+        ?text: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        name: String,
+        signers: ::Array[Legalesign::DocumentCreateParams::Signer],
+        append_pdf: bool,
+        auto_archive: bool,
+        cc_emails: String,
+        convert_sender_to_signer: bool,
+        do_email: bool,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        header_height: Integer,
+        pdf_password: String,
+        pdf_password_type: Legalesign::Models::DocumentCreateParams::pdf_password_type,
+        pdftext: ::Hash[Symbol, String],
+        redirect: String,
+        reminders: String,
+        return_signer_links: bool,
+        signature_type: Integer,
+        signers_in_order: bool,
+        signertext: ::Hash[Symbol, String],
+        strict_fields: bool,
+        tag: String,
+        :tag1 => String,
+        :tag2 => String,
+        template: String,
+        templatepdf: String,
+        text: String,
+        user: String,
+        request_options: Legalesign::RequestOptions
+      }
+
+      type signer =
+        {
+          email: String,
+          firstname: String,
+          lastname: String,
+          attachments: ::Array[String],
+          behalfof: String,
+          decide_later: bool,
+          expires: Time?,
+          message: String,
+          order: Integer,
+          reviewers: ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer],
+          role: Legalesign::Models::DocumentCreateParams::Signer::role,
+          sms: String,
+          subject: String,
+          timezone: String
+        }
+
+      class Signer < Legalesign::Internal::Type::BaseModel
+        attr_accessor email: String
+
+        attr_accessor firstname: String
+
+        attr_accessor lastname: String
+
+        attr_reader attachments: ::Array[String]?
+
+        def attachments=: (::Array[String]) -> ::Array[String]
+
+        attr_reader behalfof: String?
+
+        def behalfof=: (String) -> String
+
+        attr_reader decide_later: bool?
+
+        def decide_later=: (bool) -> bool
+
+        attr_accessor expires: Time?
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader order: Integer?
+
+        def order=: (Integer) -> Integer
+
+        attr_reader reviewers: ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer]?
+
+        def reviewers=: (
+          ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer]
+        ) -> ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer]
+
+        attr_reader role: Legalesign::Models::DocumentCreateParams::Signer::role?
+
+        def role=: (
+          Legalesign::Models::DocumentCreateParams::Signer::role
+        ) -> Legalesign::Models::DocumentCreateParams::Signer::role
+
+        attr_reader sms: String?
+
+        def sms=: (String) -> String
+
+        attr_reader subject: String?
+
+        def subject=: (String) -> String
+
+        attr_reader timezone: String?
+
+        def timezone=: (String) -> String
+
+        def initialize: (
+          email: String,
+          firstname: String,
+          lastname: String,
+          ?attachments: ::Array[String],
+          ?behalfof: String,
+          ?decide_later: bool,
+          ?expires: Time?,
+          ?message: String,
+          ?order: Integer,
+          ?reviewers: ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer],
+          ?role: Legalesign::Models::DocumentCreateParams::Signer::role,
+          ?sms: String,
+          ?subject: String,
+          ?timezone: String
+        ) -> void
+
+        def to_hash: -> {
+          email: String,
+          firstname: String,
+          lastname: String,
+          attachments: ::Array[String],
+          behalfof: String,
+          decide_later: bool,
+          expires: Time?,
+          message: String,
+          order: Integer,
+          reviewers: ::Array[Legalesign::DocumentCreateParams::Signer::Reviewer],
+          role: Legalesign::Models::DocumentCreateParams::Signer::role,
+          sms: String,
+          subject: String,
+          timezone: String
+        }
+
+        type reviewer =
+          {
+            email: String,
+            firstname: String,
+            include_link: bool,
+            lastname: String
+          }
+
+        class Reviewer < Legalesign::Internal::Type::BaseModel
+          attr_accessor email: String
+
+          attr_reader firstname: String?
+
+          def firstname=: (String) -> String
+
+          attr_reader include_link: bool?
+
+          def include_link=: (bool) -> bool
+
+          attr_reader lastname: String?
+
+          def lastname=: (String) -> String
+
+          def initialize: (
+            email: String,
+            ?firstname: String,
+            ?include_link: bool,
+            ?lastname: String
+          ) -> void
+
+          def to_hash: -> {
+            email: String,
+            firstname: String,
+            include_link: bool,
+            lastname: String
+          }
+        end
+
+        type role = :witness | :approver
+
+        module Role
+          extend Legalesign::Internal::Type::Enum
+
+          WITNESS: :witness
+          APPROVER: :approver
+
+          def self?.values: -> ::Array[Legalesign::Models::DocumentCreateParams::Signer::role]
+        end
+      end
+
+      type pdf_password_type = 1 | 2
+
+      module PdfPasswordType
+        extend Legalesign::Internal::Type::Enum
+
+        PDF_PASSWORD_TYPE_1: 1
+        PDF_PASSWORD_TYPE_2: 2
+
+        def self?.values: -> ::Array[Legalesign::Models::DocumentCreateParams::pdf_password_type]
+      end
+    end
+  end
+end

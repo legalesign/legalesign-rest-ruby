@@ -1,0 +1,47 @@
+module Legalesign
+  module Models
+    type member_create_params =
+      {
+        email: String,
+        group: String,
+        do_email: bool,
+        permission: Legalesign::Models::permissions_enum
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class MemberCreateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor email: String
+
+      attr_accessor group: String
+
+      attr_reader do_email: bool?
+
+      def do_email=: (bool) -> bool
+
+      attr_reader permission: Legalesign::Models::permissions_enum?
+
+      def permission=: (
+        Legalesign::Models::permissions_enum
+      ) -> Legalesign::Models::permissions_enum
+
+      def initialize: (
+        email: String,
+        group: String,
+        ?do_email: bool,
+        ?permission: Legalesign::Models::permissions_enum,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        email: String,
+        group: String,
+        do_email: bool,
+        permission: Legalesign::Models::permissions_enum,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end
