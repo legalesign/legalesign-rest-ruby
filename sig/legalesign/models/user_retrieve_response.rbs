@@ -1,0 +1,80 @@
+module Legalesign
+  module Models
+    type user_retrieve_response =
+      {
+        date_joined: Time,
+        email: String,
+        first_name: String,
+        groups: ::Array[String],
+        last_login: Time,
+        last_name: String,
+        resource_uri: String,
+        timezone: Legalesign::Models::timezone_enum,
+        username: String
+      }
+
+    class UserRetrieveResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader date_joined: Time?
+
+      def date_joined=: (Time) -> Time
+
+      attr_reader email: String?
+
+      def email=: (String) -> String
+
+      attr_reader first_name: String?
+
+      def first_name=: (String) -> String
+
+      attr_reader groups: ::Array[String]?
+
+      def groups=: (::Array[String]) -> ::Array[String]
+
+      attr_reader last_login: Time?
+
+      def last_login=: (Time) -> Time
+
+      attr_reader last_name: String?
+
+      def last_name=: (String) -> String
+
+      attr_reader resource_uri: String?
+
+      def resource_uri=: (String) -> String
+
+      attr_reader timezone: Legalesign::Models::timezone_enum?
+
+      def timezone=: (
+        Legalesign::Models::timezone_enum
+      ) -> Legalesign::Models::timezone_enum
+
+      attr_reader username: String?
+
+      def username=: (String) -> String
+
+      def initialize: (
+        ?date_joined: Time,
+        ?email: String,
+        ?first_name: String,
+        ?groups: ::Array[String],
+        ?last_login: Time,
+        ?last_name: String,
+        ?resource_uri: String,
+        ?timezone: Legalesign::Models::timezone_enum,
+        ?username: String
+      ) -> void
+
+      def to_hash: -> {
+        date_joined: Time,
+        email: String,
+        first_name: String,
+        groups: ::Array[String],
+        last_login: Time,
+        last_name: String,
+        resource_uri: String,
+        timezone: Legalesign::Models::timezone_enum,
+        username: String
+      }
+    end
+  end
+end

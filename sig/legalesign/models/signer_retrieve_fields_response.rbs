@@ -1,0 +1,51 @@
+module Legalesign
+  module Models
+    type signer_retrieve_fields_response_item =
+      {
+        fieldorder: Integer?,
+        label: String,
+        label_extra: String,
+        state: bool,
+        value: String?
+      }
+
+    class SignerRetrieveFieldsResponseItem < Legalesign::Internal::Type::BaseModel
+      attr_accessor fieldorder: Integer?
+
+      attr_reader label: String?
+
+      def label=: (String) -> String
+
+      attr_reader label_extra: String?
+
+      def label_extra=: (String) -> String
+
+      attr_reader state: bool?
+
+      def state=: (bool) -> bool
+
+      attr_accessor value: String?
+
+      def initialize: (
+        ?fieldorder: Integer?,
+        ?label: String,
+        ?label_extra: String,
+        ?state: bool,
+        ?value: String?
+      ) -> void
+
+      def to_hash: -> {
+        fieldorder: Integer?,
+        label: String,
+        label_extra: String,
+        state: bool,
+        value: String?
+      }
+    end
+
+    type signer_retrieve_fields_response =
+      ::Array[Legalesign::Models::SignerRetrieveFieldsResponseItem]
+
+    SignerRetrieveFieldsResponse: Legalesign::Internal::Type::Converter
+  end
+end

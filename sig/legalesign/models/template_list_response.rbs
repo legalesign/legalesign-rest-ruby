@@ -1,0 +1,113 @@
+module Legalesign
+  module Models
+    type template_list_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::TemplateListResponse::Object]
+      }
+
+    class TemplateListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::Models::TemplateListResponse::Object]?
+
+      def objects=: (
+        ::Array[Legalesign::Models::TemplateListResponse::Object]
+      ) -> ::Array[Legalesign::Models::TemplateListResponse::Object]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::Models::TemplateListResponse::Object]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::TemplateListResponse::Object]
+      }
+
+      type object =
+        {
+          archive: bool,
+          created: Time,
+          group: String,
+          has_fields: bool,
+          modified: Time,
+          resource_uri: String,
+          signee_count: Integer,
+          title: String,
+          user: String,
+          uuid: String
+        }
+
+      class Object < Legalesign::Internal::Type::BaseModel
+        attr_reader archive: bool?
+
+        def archive=: (bool) -> bool
+
+        attr_reader created: Time?
+
+        def created=: (Time) -> Time
+
+        attr_reader group: String?
+
+        def group=: (String) -> String
+
+        attr_reader has_fields: bool?
+
+        def has_fields=: (bool) -> bool
+
+        attr_reader modified: Time?
+
+        def modified=: (Time) -> Time
+
+        attr_reader resource_uri: String?
+
+        def resource_uri=: (String) -> String
+
+        attr_reader signee_count: Integer?
+
+        def signee_count=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader user: String?
+
+        def user=: (String) -> String
+
+        attr_reader uuid: String?
+
+        def uuid=: (String) -> String
+
+        def initialize: (
+          ?archive: bool,
+          ?created: Time,
+          ?group: String,
+          ?has_fields: bool,
+          ?modified: Time,
+          ?resource_uri: String,
+          ?signee_count: Integer,
+          ?title: String,
+          ?user: String,
+          ?uuid: String
+        ) -> void
+
+        def to_hash: -> {
+          archive: bool,
+          created: Time,
+          group: String,
+          has_fields: bool,
+          modified: Time,
+          resource_uri: String,
+          signee_count: Integer,
+          title: String,
+          user: String,
+          uuid: String
+        }
+      end
+    end
+  end
+end

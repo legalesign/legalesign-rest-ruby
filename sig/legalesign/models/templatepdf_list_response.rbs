@@ -1,0 +1,28 @@
+module Legalesign
+  module Models
+    type templatepdf_list_response =
+      { meta: Legalesign::ListMeta, objects: ::Array[Legalesign::TemplatePdf] }
+
+    class TemplatepdfListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::TemplatePdf]?
+
+      def objects=: (
+        ::Array[Legalesign::TemplatePdf]
+      ) -> ::Array[Legalesign::TemplatePdf]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::TemplatePdf]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::TemplatePdf]
+      }
+    end
+  end
+end

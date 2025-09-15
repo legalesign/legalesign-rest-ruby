@@ -1,0 +1,59 @@
+module Legalesign
+  module Models
+    type templatepdf_create_params =
+      {
+        group: String,
+        pdf_file: String,
+        archive_upon_send: bool,
+        process_tags: bool,
+        title: String,
+        user: String
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class TemplatepdfCreateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor group: String
+
+      attr_accessor pdf_file: String
+
+      attr_reader archive_upon_send: bool?
+
+      def archive_upon_send=: (bool) -> bool
+
+      attr_reader process_tags: bool?
+
+      def process_tags=: (bool) -> bool
+
+      attr_reader title: String?
+
+      def title=: (String) -> String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      def initialize: (
+        group: String,
+        pdf_file: String,
+        ?archive_upon_send: bool,
+        ?process_tags: bool,
+        ?title: String,
+        ?user: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        pdf_file: String,
+        archive_upon_send: bool,
+        process_tags: bool,
+        title: String,
+        user: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

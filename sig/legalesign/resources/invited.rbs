@@ -1,0 +1,17 @@
+module Legalesign
+  module Resources
+    class Invited
+      def list: (
+        ?group: String,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::InvitedListResponse
+
+      def delete: (
+        String invited_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

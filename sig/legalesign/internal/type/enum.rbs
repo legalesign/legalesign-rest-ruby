@@ -1,0 +1,32 @@
+module Legalesign
+  module Internal
+    module Type
+      module Enum
+        include Legalesign::Internal::Type::Converter
+        include Legalesign::Internal::Util::SorbetRuntimeSupport
+
+        def self.values: -> ::Array[(nil | bool | Integer | Float | Symbol)]
+
+        def ===: (top other) -> bool
+
+        def ==: (top other) -> bool
+
+        def hash: -> Integer
+
+        def coerce: (
+          String | Symbol | top value,
+          state: Legalesign::Internal::Type::Converter::coerce_state
+        ) -> (Symbol | top)
+
+        def dump: (
+          Symbol | top value,
+          state: Legalesign::Internal::Type::Converter::dump_state
+        ) -> (Symbol | top)
+
+        def to_sorbet_type: -> top
+
+        def inspect: (?depth: Integer) -> String
+      end
+    end
+  end
+end

@@ -1,0 +1,25 @@
+module Legalesign
+  module Models
+    type group_update_params =
+      { public_name: String } & Legalesign::Internal::Type::request_parameters
+
+    class GroupUpdateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_reader public_name: String?
+
+      def public_name=: (String) -> String
+
+      def initialize: (
+        ?public_name: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        public_name: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,44 @@
+module Legalesign
+  module Models
+    type templatepdf_list_params =
+      { archive: String, group: String, limit: Integer, offset: Integer }
+      & Legalesign::Internal::Type::request_parameters
+
+    class TemplatepdfListParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_reader archive: String?
+
+      def archive=: (String) -> String
+
+      attr_reader group: String?
+
+      def group=: (String) -> String
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader offset: Integer?
+
+      def offset=: (Integer) -> Integer
+
+      def initialize: (
+        ?archive: String,
+        ?group: String,
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        archive: String,
+        group: String,
+        limit: Integer,
+        offset: Integer,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

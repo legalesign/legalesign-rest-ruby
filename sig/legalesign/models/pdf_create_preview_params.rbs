@@ -1,0 +1,88 @@
+module Legalesign
+  module Models
+    type pdf_create_preview_params =
+      {
+        group: String,
+        is_signature_per_page: Integer,
+        signature_type: Integer,
+        signee_count: Integer,
+        text: String,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        header_height: Integer,
+        pdfheader: bool,
+        title: String
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class PdfCreatePreviewParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor group: String
+
+      attr_accessor is_signature_per_page: Integer
+
+      attr_accessor signature_type: Integer
+
+      attr_accessor signee_count: Integer
+
+      attr_accessor text: String
+
+      attr_reader footer: String?
+
+      def footer=: (String) -> String
+
+      attr_reader footer_height: Integer?
+
+      def footer_height=: (Integer) -> Integer
+
+      attr_reader header: String?
+
+      def header=: (String) -> String
+
+      attr_reader header_height: Integer?
+
+      def header_height=: (Integer) -> Integer
+
+      attr_reader pdfheader: bool?
+
+      def pdfheader=: (bool) -> bool
+
+      attr_reader title: String?
+
+      def title=: (String) -> String
+
+      def initialize: (
+        group: String,
+        is_signature_per_page: Integer,
+        signature_type: Integer,
+        signee_count: Integer,
+        text: String,
+        ?footer: String,
+        ?footer_height: Integer,
+        ?header: String,
+        ?header_height: Integer,
+        ?pdfheader: bool,
+        ?title: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        is_signature_per_page: Integer,
+        signature_type: Integer,
+        signee_count: Integer,
+        text: String,
+        footer: String,
+        footer_height: Integer,
+        header: String,
+        header_height: Integer,
+        pdfheader: bool,
+        title: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

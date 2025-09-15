@@ -1,0 +1,30 @@
+module Legalesign
+  module Models
+    type signer_reset_params =
+      { email: String, notify: bool }
+      & Legalesign::Internal::Type::request_parameters
+
+    class SignerResetParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor email: String
+
+      attr_reader notify: bool?
+
+      def notify=: (bool) -> bool
+
+      def initialize: (
+        email: String,
+        ?notify: bool,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        email: String,
+        notify: bool,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

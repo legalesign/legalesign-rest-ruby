@@ -1,0 +1,15 @@
+module Legalesign
+  module Models
+    type template_retrieve_params =
+      {  } & Legalesign::Internal::Type::request_parameters
+
+    class TemplateRetrieveParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: Legalesign::request_opts) -> void
+
+      def to_hash: -> { request_options: Legalesign::RequestOptions }
+    end
+  end
+end

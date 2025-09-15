@@ -1,0 +1,15 @@
+module Legalesign
+  module Models
+    type document_download_audit_log_params =
+      {  } & Legalesign::Internal::Type::request_parameters
+
+    class DocumentDownloadAuditLogParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: Legalesign::request_opts) -> void
+
+      def to_hash: -> { request_options: Legalesign::RequestOptions }
+    end
+  end
+end

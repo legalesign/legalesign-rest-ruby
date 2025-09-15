@@ -1,0 +1,15 @@
+module Legalesign
+  module Models
+    type attachment_delete_params =
+      {  } & Legalesign::Internal::Type::request_parameters
+
+    class AttachmentDeleteParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: Legalesign::request_opts) -> void
+
+      def to_hash: -> { request_options: Legalesign::RequestOptions }
+    end
+  end
+end

@@ -1,0 +1,40 @@
+module Legalesign
+  module Resources
+    class Signer
+      def retrieve: (
+        String signer_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::SignerRetrieveResponse
+
+      def get_access_link: (
+        String signer_id,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def get_rejection_reason: (
+        String signer_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::SignerGetRejectionReasonResponse
+
+      def reset: (
+        String signer_id,
+        email: String,
+        ?notify: bool,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def retrieve_fields: (
+        String signer_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::signer_retrieve_fields_response
+
+      def send_reminder: (
+        String signer_id,
+        ?text: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

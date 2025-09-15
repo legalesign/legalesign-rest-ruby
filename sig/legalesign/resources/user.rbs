@@ -1,0 +1,30 @@
+module Legalesign
+  module Resources
+    class User
+      def create: (
+        email: String,
+        first_name: String,
+        last_name: String,
+        ?groups: String,
+        ?password: String,
+        ?permission: Legalesign::Models::UserCreateParams::permission,
+        ?timezone: Legalesign::Models::timezone_enum,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def retrieve: (
+        String user_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::UserRetrieveResponse
+
+      def update: (
+        String user_id,
+        ?first_name: String,
+        ?last_name: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

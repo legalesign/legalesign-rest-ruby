@@ -1,0 +1,52 @@
+module Legalesign
+  class Client < Legalesign::Internal::Transport::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    attr_reader api_key: String
+
+    attr_reader attachment: Legalesign::Resources::Attachment
+
+    attr_reader document: Legalesign::Resources::Document
+
+    attr_reader group: Legalesign::Resources::Group
+
+    attr_reader invited: Legalesign::Resources::Invited
+
+    attr_reader member: Legalesign::Resources::Member
+
+    attr_reader notifications: Legalesign::Resources::Notifications
+
+    attr_reader pdf: Legalesign::Resources::Pdf
+
+    attr_reader signer: Legalesign::Resources::Signer
+
+    attr_reader status: Legalesign::Resources::Status
+
+    attr_reader subscribe: Legalesign::Resources::Subscribe
+
+    attr_reader template: Legalesign::Resources::Template
+
+    attr_reader templatepdf: Legalesign::Resources::Templatepdf
+
+    attr_reader unsubscribe: Legalesign::Resources::Unsubscribe
+
+    attr_reader user: Legalesign::Resources::User
+
+    private def auth_headers: -> ::Hash[String, String]
+
+    def initialize: (
+      ?api_key: String?,
+      ?base_url: String?,
+      ?max_retries: Integer,
+      ?timeout: Float,
+      ?initial_retry_delay: Float,
+      ?max_retry_delay: Float
+    ) -> void
+  end
+end

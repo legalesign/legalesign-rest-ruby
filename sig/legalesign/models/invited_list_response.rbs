@@ -1,0 +1,66 @@
+module Legalesign
+  module Models
+    type invited_list_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::InvitedListResponse::Object]
+      }
+
+    class InvitedListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::Models::InvitedListResponse::Object]?
+
+      def objects=: (
+        ::Array[Legalesign::Models::InvitedListResponse::Object]
+      ) -> ::Array[Legalesign::Models::InvitedListResponse::Object]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::Models::InvitedListResponse::Object]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::Models::InvitedListResponse::Object]
+      }
+
+      type object =
+        { created: Time, email: String, group: String, resource_uri: String }
+
+      class Object < Legalesign::Internal::Type::BaseModel
+        attr_reader created: Time?
+
+        def created=: (Time) -> Time
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader group: String?
+
+        def group=: (String) -> String
+
+        attr_reader resource_uri: String?
+
+        def resource_uri=: (String) -> String
+
+        def initialize: (
+          ?created: Time,
+          ?email: String,
+          ?group: String,
+          ?resource_uri: String
+        ) -> void
+
+        def to_hash: -> {
+          created: Time,
+          email: String,
+          group: String,
+          resource_uri: String
+        }
+      end
+    end
+  end
+end

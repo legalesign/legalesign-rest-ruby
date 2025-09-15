@@ -1,0 +1,31 @@
+module Legalesign
+  module Models
+    type attachment_list_response =
+      {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::AttachmentResponse]
+      }
+
+    class AttachmentListResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader meta: Legalesign::ListMeta?
+
+      def meta=: (Legalesign::ListMeta) -> Legalesign::ListMeta
+
+      attr_reader objects: ::Array[Legalesign::AttachmentResponse]?
+
+      def objects=: (
+        ::Array[Legalesign::AttachmentResponse]
+      ) -> ::Array[Legalesign::AttachmentResponse]
+
+      def initialize: (
+        ?meta: Legalesign::ListMeta,
+        ?objects: ::Array[Legalesign::AttachmentResponse]
+      ) -> void
+
+      def to_hash: -> {
+        meta: Legalesign::ListMeta,
+        objects: ::Array[Legalesign::AttachmentResponse]
+      }
+    end
+  end
+end

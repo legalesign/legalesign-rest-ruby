@@ -1,0 +1,26 @@
+module Legalesign
+  module Models
+    type document_status_enum = 10 | 20 | 30 | 40 | 50
+
+    module DocumentStatusEnum
+      extend Legalesign::Internal::Type::Enum
+
+      # Created
+      DOCUMENT_STATUS_ENUM_10: 10
+
+      # Fields completed
+      DOCUMENT_STATUS_ENUM_20: 20
+
+      # Signed
+      DOCUMENT_STATUS_ENUM_30: 30
+
+      # Removed
+      DOCUMENT_STATUS_ENUM_40: 40
+
+      # Rejected
+      DOCUMENT_STATUS_ENUM_50: 50
+
+      def self?.values: -> ::Array[Legalesign::Models::document_status_enum]
+    end
+  end
+end

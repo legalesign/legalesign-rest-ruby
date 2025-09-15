@@ -1,0 +1,29 @@
+module Legalesign
+  module Models
+    type permissions_enum = 1 | 2 | 3 | 4 | 5 | 6
+
+    module PermissionsEnum
+      extend Legalesign::Internal::Type::Enum
+
+      # Admin
+      PERMISSIONS_ENUM_1: 1
+
+      # Team visible, create and send
+      PERMISSIONS_ENUM_2: 2
+
+      # Team visible, send only
+      PERMISSIONS_ENUM_3: 3
+
+      # Team not visible, send only
+      PERMISSIONS_ENUM_4: 4
+
+      # Team not visible, create and send
+      PERMISSIONS_ENUM_5: 5
+
+      # Team visible, read only
+      PERMISSIONS_ENUM_6: 6
+
+      def self?.values: -> ::Array[Legalesign::Models::permissions_enum]
+    end
+  end
+end

@@ -1,0 +1,73 @@
+module Legalesign
+  module Models
+    type signer_retrieve_response =
+      {
+        document: String,
+        email: String,
+        first_name: String,
+        has_fields: bool,
+        last_name: String,
+        order: Integer,
+        resource_uri: String,
+        status: Legalesign::Models::signer_status_enum
+      }
+
+    class SignerRetrieveResponse < Legalesign::Internal::Type::BaseModel
+      attr_reader document: String?
+
+      def document=: (String) -> String
+
+      attr_reader email: String?
+
+      def email=: (String) -> String
+
+      attr_reader first_name: String?
+
+      def first_name=: (String) -> String
+
+      attr_reader has_fields: bool?
+
+      def has_fields=: (bool) -> bool
+
+      attr_reader last_name: String?
+
+      def last_name=: (String) -> String
+
+      attr_reader order: Integer?
+
+      def order=: (Integer) -> Integer
+
+      attr_reader resource_uri: String?
+
+      def resource_uri=: (String) -> String
+
+      attr_reader status: Legalesign::Models::signer_status_enum?
+
+      def status=: (
+        Legalesign::Models::signer_status_enum
+      ) -> Legalesign::Models::signer_status_enum
+
+      def initialize: (
+        ?document: String,
+        ?email: String,
+        ?first_name: String,
+        ?has_fields: bool,
+        ?last_name: String,
+        ?order: Integer,
+        ?resource_uri: String,
+        ?status: Legalesign::Models::signer_status_enum
+      ) -> void
+
+      def to_hash: -> {
+        document: String,
+        email: String,
+        first_name: String,
+        has_fields: bool,
+        last_name: String,
+        order: Integer,
+        resource_uri: String,
+        status: Legalesign::Models::signer_status_enum
+      }
+    end
+  end
+end

@@ -1,0 +1,14 @@
+module Legalesign
+  module Resources
+    class Unsubscribe
+      def delete_webhook: (
+        url: String,
+        ?event_filter: Legalesign::Models::webhook_event_filter_enum,
+        ?group: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

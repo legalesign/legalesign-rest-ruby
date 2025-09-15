@@ -1,0 +1,32 @@
+module Legalesign
+  module Models
+    type user_update_params =
+      { first_name: String, last_name: String }
+      & Legalesign::Internal::Type::request_parameters
+
+    class UserUpdateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_reader first_name: String?
+
+      def first_name=: (String) -> String
+
+      attr_reader last_name: String?
+
+      def last_name=: (String) -> String
+
+      def initialize: (
+        ?first_name: String,
+        ?last_name: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        first_name: String,
+        last_name: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

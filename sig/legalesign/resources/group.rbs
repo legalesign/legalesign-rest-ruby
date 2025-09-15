@@ -1,0 +1,30 @@
+module Legalesign
+  module Resources
+    class Group
+      def create: (
+        name: String,
+        ?xframe_allow: bool,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def retrieve: (
+        String group_id,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::GroupRetrieveResponse
+
+      def update: (
+        String group_id,
+        ?public_name: String,
+        ?request_options: Legalesign::request_opts
+      ) -> nil
+
+      def list: (
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: Legalesign::request_opts
+      ) -> Legalesign::Models::GroupListResponse
+
+      def initialize: (client: Legalesign::Client) -> void
+    end
+  end
+end

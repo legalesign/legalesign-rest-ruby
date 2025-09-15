@@ -1,0 +1,47 @@
+module Legalesign
+  module Models
+    type subscribe_create_webhook_params =
+      {
+        notify: String,
+        url: String,
+        event_filter: Legalesign::Models::webhook_event_filter_enum,
+        group: String
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class SubscribeCreateWebhookParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor notify: String
+
+      attr_accessor url: String
+
+      attr_reader event_filter: Legalesign::Models::webhook_event_filter_enum?
+
+      def event_filter=: (
+        Legalesign::Models::webhook_event_filter_enum
+      ) -> Legalesign::Models::webhook_event_filter_enum
+
+      attr_reader group: String?
+
+      def group=: (String) -> String
+
+      def initialize: (
+        notify: String,
+        url: String,
+        ?event_filter: Legalesign::Models::webhook_event_filter_enum,
+        ?group: String,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        notify: String,
+        url: String,
+        event_filter: Legalesign::Models::webhook_event_filter_enum,
+        group: String,
+        request_options: Legalesign::RequestOptions
+      }
+    end
+  end
+end

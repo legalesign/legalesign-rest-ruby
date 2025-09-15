@@ -1,0 +1,83 @@
+module Legalesign
+  module Models
+    type user_create_params =
+      {
+        email: String,
+        first_name: String,
+        last_name: String,
+        groups: String,
+        password: String,
+        permission: Legalesign::Models::UserCreateParams::permission,
+        timezone: Legalesign::Models::timezone_enum
+      }
+      & Legalesign::Internal::Type::request_parameters
+
+    class UserCreateParams < Legalesign::Internal::Type::BaseModel
+      extend Legalesign::Internal::Type::RequestParameters::Converter
+      include Legalesign::Internal::Type::RequestParameters
+
+      attr_accessor email: String
+
+      attr_accessor first_name: String
+
+      attr_accessor last_name: String
+
+      attr_reader groups: String?
+
+      def groups=: (String) -> String
+
+      attr_reader password: String?
+
+      def password=: (String) -> String
+
+      attr_reader permission: Legalesign::Models::UserCreateParams::permission?
+
+      def permission=: (
+        Legalesign::Models::UserCreateParams::permission
+      ) -> Legalesign::Models::UserCreateParams::permission
+
+      attr_reader timezone: Legalesign::Models::timezone_enum?
+
+      def timezone=: (
+        Legalesign::Models::timezone_enum
+      ) -> Legalesign::Models::timezone_enum
+
+      def initialize: (
+        email: String,
+        first_name: String,
+        last_name: String,
+        ?groups: String,
+        ?password: String,
+        ?permission: Legalesign::Models::UserCreateParams::permission,
+        ?timezone: Legalesign::Models::timezone_enum,
+        ?request_options: Legalesign::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        email: String,
+        first_name: String,
+        last_name: String,
+        groups: String,
+        password: String,
+        permission: Legalesign::Models::UserCreateParams::permission,
+        timezone: Legalesign::Models::timezone_enum,
+        request_options: Legalesign::RequestOptions
+      }
+
+      type permission = :"1" | :"2" | :"3" | :"4" | :"5" | :"6"
+
+      module Permission
+        extend Legalesign::Internal::Type::Enum
+
+        PERMISSION_1: :"1"
+        PERMISSION_2: :"2"
+        PERMISSION_3: :"3"
+        PERMISSION_4: :"4"
+        PERMISSION_5: :"5"
+        PERMISSION_6: :"6"
+
+        def self?.values: -> ::Array[Legalesign::Models::UserCreateParams::permission]
+      end
+    end
+  end
+end
