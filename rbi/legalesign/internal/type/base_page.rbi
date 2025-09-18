@@ -30,7 +30,7 @@ module Legalesign
           params(
             client: Legalesign::Internal::Transport::BaseClient,
             req: Legalesign::Internal::Transport::BaseClient::RequestComponents,
-            headers: T.any(T::Hash[String, String], Net::HTTPHeader),
+            headers: T::Hash[String, String],
             page_data: T.anything
           ).void
         end
