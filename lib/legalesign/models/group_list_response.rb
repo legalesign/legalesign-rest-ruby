@@ -2,7 +2,7 @@
 
 module Legalesign
   module Models
-    # @see Legalesign::Resources::Group#list
+    # @see Legalesign::Resources::Groups#list
     class GroupListResponse < Legalesign::Internal::Type::BaseModel
       # @!attribute meta
       #
