@@ -2,7 +2,7 @@
 
 module Legalesign
   module Models
-    # @see Legalesign::Resources::Groups#retrieve
+    # @see Legalesign::Resources::Group#retrieve
     class GroupRetrieveResponse < Legalesign::Internal::Type::BaseModel
       # @!attribute created
       #

@@ -32,9 +32,9 @@ legalesign = Legalesign::Client.new(
   api_key: ENV["LEGALESIGN_API_KEY"] # This is the default and can be omitted
 )
 
-attachments = legalesign.attachment.list
+groups = legalesign.group.list
 
-puts(attachments.meta)
+puts(groups.meta)
 ```
 
 ### Handling errors
@@ -43,7 +43,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  attachment = legalesign.attachment.list
+  group = legalesign.group.list
 rescue Legalesign::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -86,7 +86,7 @@ legalesign = Legalesign::Client.new(
 )
 
 # Or, configure per-request:
-legalesign.attachment.list(request_options: {max_retries: 5})
+legalesign.group.list(request_options: {max_retries: 5})
 ```
 
 ### Timeouts
@@ -100,7 +100,7 @@ legalesign = Legalesign::Client.new(
 )
 
 # Or, configure per-request:
-legalesign.attachment.list(request_options: {timeout: 5})
+legalesign.group.list(request_options: {timeout: 5})
 ```
 
 On timeout, `Legalesign::Errors::APITimeoutError` is raised.
@@ -130,8 +130,8 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-attachments =
-  legalesign.attachment.list(
+groups =
+  legalesign.group.list(
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -139,7 +139,7 @@ attachments =
     }
   )
 
-puts(attachments[:my_undocumented_property])
+puts(groups[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -177,18 +177,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-legalesign.attachment.list
+legalesign.group.list
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-legalesign.attachment.list
+legalesign.group.list
 
 # You can also splat a full Params class:
-params = Legalesign::AttachmentListParams.new
-legalesign.attachment.list(**params)
+params = Legalesign::GroupListParams.new
+legalesign.group.list(**params)
 ```
 
 ### Enums
