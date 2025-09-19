@@ -2,7 +2,7 @@
 
 module Legalesign
   module Resources
-    class Group
+    class Groups
       # Create group
       #
       # @overload create(name:, xframe_allow: nil, request_options: {})

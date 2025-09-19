@@ -14,7 +14,7 @@ module Legalesign
 
     attr_reader document: Legalesign::Resources::Document
 
-    attr_reader group: Legalesign::Resources::Group
+    attr_reader groups: Legalesign::Resources::Groups
 
     attr_reader invited: Legalesign::Resources::Invited
 

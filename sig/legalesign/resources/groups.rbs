@@ -1,6 +1,6 @@
 module Legalesign
   module Resources
-    class Group
+    class Groups
       def create: (
         name: String,
         ?xframe_allow: bool,

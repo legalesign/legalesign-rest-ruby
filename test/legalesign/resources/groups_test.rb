@@ -2,11 +2,11 @@
 
 require_relative "../test_helper"
 
-class Legalesign::Test::Resources::GroupTest < Legalesign::Test::ResourceTest
+class Legalesign::Test::Resources::GroupsTest < Legalesign::Test::ResourceTest
   def test_create_required_params
     skip("Prism tests are disabled")
 
-    response = @legalesign.group.create(name: "xxxx")
+    response = @legalesign.groups.create(name: "xxxx")
 
     assert_pattern do
       response => nil
@@ -16,7 +16,7 @@ class Legalesign::Test::Resources::GroupTest < Legalesign::Test::ResourceTest
   def test_retrieve
     skip("Prism tests are disabled")
 
-    response = @legalesign.group.retrieve("groupId")
+    response = @legalesign.groups.retrieve("groupId")
 
     assert_pattern do
       response => Legalesign::Models::GroupRetrieveResponse
@@ -48,7 +48,7 @@ class Legalesign::Test::Resources::GroupTest < Legalesign::Test::ResourceTest
   def test_update
     skip("Prism tests are disabled")
 
-    response = @legalesign.group.update("groupId")
+    response = @legalesign.groups.update("groupId")
 
     assert_pattern do
       response => nil
@@ -58,7 +58,7 @@ class Legalesign::Test::Resources::GroupTest < Legalesign::Test::ResourceTest
   def test_list
     skip("Prism tests are disabled")
 
-    response = @legalesign.group.list
+    response = @legalesign.groups.list
 
     assert_pattern do
       response => Legalesign::Models::GroupListResponse

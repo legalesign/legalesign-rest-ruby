@@ -24,8 +24,8 @@ module Legalesign
     # @return [Legalesign::Resources::Document]
     attr_reader :document
 
-    # @return [Legalesign::Resources::Group]
-    attr_reader :group
+    # @return [Legalesign::Resources::Groups]
+    attr_reader :groups
 
     # @return [Legalesign::Resources::Invited]
     attr_reader :invited
@@ -107,7 +107,7 @@ module Legalesign
 
       @attachment = Legalesign::Resources::Attachment.new(client: self)
       @document = Legalesign::Resources::Document.new(client: self)
-      @group = Legalesign::Resources::Group.new(client: self)
+      @groups = Legalesign::Resources::Groups.new(client: self)
       @invited = Legalesign::Resources::Invited.new(client: self)
       @member = Legalesign::Resources::Member.new(client: self)
       @notifications = Legalesign::Resources::Notifications.new(client: self)
