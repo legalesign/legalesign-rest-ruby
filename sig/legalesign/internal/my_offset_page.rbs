@@ -1,0 +1,13 @@
+module Legalesign
+  module Internal
+    class MyOffsetPage[Elem]
+      include Legalesign::Internal::Type::BasePage[Elem]
+
+      attr_accessor objects: ::Array[Elem]?
+
+      attr_accessor meta: top
+
+      def inspect: -> String
+    end
+  end
+end

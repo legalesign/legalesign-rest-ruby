@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version = Legalesign::VERSION
   s.summary = "Ruby library to access the Legalesign API"
   s.authors = ["Legalesign"]
-  s.email = "support@legalesign.com"
+  s.email = "sales@legalesign.com"
   s.homepage = "https://gemdocs.org/gems/legalesign"
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/legalesign/legalesign-rest-ruby"

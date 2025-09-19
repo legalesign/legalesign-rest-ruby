@@ -2,7 +2,7 @@
 
 module Legalesign
   module Models
-    # @see Legalesign::Resources::Groups#list
+    # @see Legalesign::Resources::Group#list
     class GroupListParams < Legalesign::Internal::Type::BaseModel
       extend Legalesign::Internal::Type::RequestParameters::Converter
       include Legalesign::Internal::Type::RequestParameters

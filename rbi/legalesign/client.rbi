@@ -19,8 +19,8 @@ module Legalesign
     sig { returns(Legalesign::Resources::Document) }
     attr_reader :document
 
-    sig { returns(Legalesign::Resources::Groups) }
-    attr_reader :groups
+    sig { returns(Legalesign::Resources::Group) }
+    attr_reader :group
 
     sig { returns(Legalesign::Resources::Invited) }
     attr_reader :invited

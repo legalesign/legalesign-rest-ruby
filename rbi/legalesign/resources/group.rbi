@@ -2,7 +2,7 @@
 
 module Legalesign
   module Resources
-    class Groups
+    class Group
       # Create group
       sig do
         params(
