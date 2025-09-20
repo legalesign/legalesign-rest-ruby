@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2025-09-20)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/legalesign/legalesign-rest-ruby/compare/v0.1.0...v0.1.1)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([d3bce3f](https://github.com/legalesign/legalesign-rest-ruby/commit/d3bce3f9edd2174e5f8571a1b4ff85b27796a3b2))
+
 ## 0.1.0 (2025-09-19)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/legalesign/legalesign-rest-ruby/compare/v0.0.1...v0.1.0)
