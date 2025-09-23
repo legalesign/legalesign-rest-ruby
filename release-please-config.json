@@ -60,7 +60,7 @@
     }
   ],
   "release-type": "ruby",
-  "version-file": "lib/legalesign/version.rb",
+  "version-file": "lib/legalesign_sdk/version.rb",
   "extra-files": [
     {
       "type": "ruby-readme",

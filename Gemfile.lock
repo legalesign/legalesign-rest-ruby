@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    legalesign (0.1.0)
+    legalesign-sdk (0.1.0)
       connection_pool
 
 GEM
@@ -203,7 +203,7 @@ PLATFORMS
 
 DEPENDENCIES
   async
-  legalesign!
+  legalesign-sdk!
   minitest
   minitest-focus
   minitest-hooks

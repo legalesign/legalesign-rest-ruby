@@ -1,0 +1,59 @@
+module LegalesignSDK
+  class DocumentArchiveParams = LegalesignSDK::Models::DocumentArchiveParams
+
+  class DocumentCreateParams = LegalesignSDK::Models::DocumentCreateParams
+
+  class DocumentGetFieldsParams = LegalesignSDK::Models::DocumentGetFieldsParams
+
+  class DocumentListParams = LegalesignSDK::Models::DocumentListParams
+
+  class DocumentPermanentlyDeleteParams = LegalesignSDK::Models::DocumentPermanentlyDeleteParams
+
+  class DocumentRetrieveParams = LegalesignSDK::Models::DocumentRetrieveParams
+
+  module DocumentStatusEnum = LegalesignSDK::Models::DocumentStatusEnum
+
+  class GroupCreateParams = LegalesignSDK::Models::GroupCreateParams
+
+  class GroupListParams = LegalesignSDK::Models::GroupListParams
+
+  class GroupRetrieveParams = LegalesignSDK::Models::GroupRetrieveParams
+
+  class ListMeta = LegalesignSDK::Models::ListMeta
+
+  module PdfFieldValidationEnum = LegalesignSDK::Models::PdfFieldValidationEnum
+
+  class PdfRetrieveParams = LegalesignSDK::Models::PdfRetrieveParams
+
+  class SignerGetAccessLinkParams = LegalesignSDK::Models::SignerGetAccessLinkParams
+
+  class SignerRetrieveFieldsParams = LegalesignSDK::Models::SignerRetrieveFieldsParams
+
+  class SignerRetrieveParams = LegalesignSDK::Models::SignerRetrieveParams
+
+  class SignerSendReminderParams = LegalesignSDK::Models::SignerSendReminderParams
+
+  module SignerStatusEnum = LegalesignSDK::Models::SignerStatusEnum
+
+  class StatusRetrieveParams = LegalesignSDK::Models::StatusRetrieveParams
+
+  class TemplateCreateParams = LegalesignSDK::Models::TemplateCreateParams
+
+  class TemplateListParams = LegalesignSDK::Models::TemplateListParams
+
+  module Templatepdf = LegalesignSDK::Models::Templatepdf
+
+  class TemplatePdf = LegalesignSDK::Models::TemplatePdf
+
+  class TemplatepdfCreateParams = LegalesignSDK::Models::TemplatepdfCreateParams
+
+  class TemplatepdfGetEditLinkParams = LegalesignSDK::Models::TemplatepdfGetEditLinkParams
+
+  class TemplatepdfListParams = LegalesignSDK::Models::TemplatepdfListParams
+
+  class TemplatepdfRetrieveParams = LegalesignSDK::Models::TemplatepdfRetrieveParams
+
+  class TemplateRetrieveParams = LegalesignSDK::Models::TemplateRetrieveParams
+
+  class TemplateUpdateParams = LegalesignSDK::Models::TemplateUpdateParams
+end

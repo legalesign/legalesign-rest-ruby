@@ -1,12 +1,12 @@
-# Legalesign Ruby API library
+# Legalesign SDK Ruby API library
 
-The Legalesign Ruby library provides convenient access to the Legalesign REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/legalesign/legalesign-rest-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The Legalesign SDK Ruby library provides convenient access to the Legalesign SDK REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/legalesign/legalesign-rest-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
-Documentation for releases of this gem can be found [on RubyDoc](https://gemdocs.org/gems/legalesign).
+Documentation for releases of this gem can be found [on RubyDoc](https://gemdocs.org/gems/legalesign-sdk).
 
 The REST API documentation can be found on [legalesign.com](https://legalesign.com/contact/).
 
@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "legalesign", "~> 0.1.0"
+gem "legalesign-sdk", "~> 0.1.0"
 ```
 
 <!-- x-release-please-end -->
@@ -26,30 +26,30 @@ gem "legalesign", "~> 0.1.0"
 
 ```ruby
 require "bundler/setup"
-require "legalesign"
+require "legalesign_sdk"
 
-legalesign = Legalesign::Client.new(
-  api_key: ENV["LEGALESIGN_API_KEY"] # This is the default and can be omitted
+legalesign_sdk = LegalesignSDK::Client.new(
+  api_key: ENV["LEGALESIGN_SDK_API_KEY"] # This is the default and can be omitted
 )
 
-groups = legalesign.group.list
+documents = legalesign_sdk.document.list(group: "REPLACE_ME")
 
-puts(groups.meta)
+puts(documents.meta)
 ```
 
 ### Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Legalesign::Errors::APIError` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `LegalesignSDK::Errors::APIError` will be thrown:
 
 ```ruby
 begin
-  group = legalesign.group.list
-rescue Legalesign::Errors::APIConnectionError => e
+  document = legalesign_sdk.document.list(group: "REPLACE_ME")
+rescue LegalesignSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
-rescue Legalesign::Errors::RateLimitError => e
+rescue LegalesignSDK::Errors::RateLimitError => e
   puts("A 429 status code was received; we should back off a bit.")
-rescue Legalesign::Errors::APIStatusError => e
+rescue LegalesignSDK::Errors::APIStatusError => e
   puts("Another non-200-range status code was received")
   puts(e.status)
 end
@@ -81,12 +81,12 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-legalesign = Legalesign::Client.new(
+legalesign_sdk = LegalesignSDK::Client.new(
   max_retries: 0 # default is 2
 )
 
 # Or, configure per-request:
-legalesign.group.list(request_options: {max_retries: 5})
+legalesign_sdk.document.list(group: "REPLACE_ME", request_options: {max_retries: 5})
 ```
 
 ### Timeouts
@@ -95,15 +95,15 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 
 ```ruby
 # Configure the default for all requests:
-legalesign = Legalesign::Client.new(
+legalesign_sdk = LegalesignSDK::Client.new(
   timeout: nil # default is 60
 )
 
 # Or, configure per-request:
-legalesign.group.list(request_options: {timeout: 5})
+legalesign_sdk.document.list(group: "REPLACE_ME", request_options: {timeout: 5})
 ```
 
-On timeout, `Legalesign::Errors::APITimeoutError` is raised.
+On timeout, `LegalesignSDK::Errors::APITimeoutError` is raised.
 
 Note that requests that time out are retried by default.
 
@@ -111,7 +111,7 @@ Note that requests that time out are retried by default.
 
 ### BaseModel
 
-All parameter and response objects inherit from `Legalesign::Internal::Type::BaseModel`, which provides several conveniences, including:
+All parameter and response objects inherit from `LegalesignSDK::Internal::Type::BaseModel`, which provides several conveniences, including:
 
 1. All fields, including unknown ones, are accessible with `obj[:prop]` syntax, and can be destructured with `obj => {prop: prop}` or pattern-matching syntax.
 
@@ -130,8 +130,9 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-groups =
-  legalesign.group.list(
+documents =
+  legalesign_sdk.document.list(
+    group: "REPLACE_ME",
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -139,7 +140,7 @@ groups =
     }
   )
 
-puts(groups[:my_undocumented_property])
+puts(documents[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -162,9 +163,9 @@ response = client.request(
 
 ### Concurrency & connection pooling
 
-The `Legalesign::Client` instances are threadsafe, but are only are fork-safe when there are no in-flight HTTP requests.
+The `LegalesignSDK::Client` instances are threadsafe, but are only are fork-safe when there are no in-flight HTTP requests.
 
-Each instance of `Legalesign::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
+Each instance of `LegalesignSDK::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
 
 When all available connections from the pool are checked out, requests wait for a new connection to become available, with queue time counting towards the request timeout.
 
@@ -177,18 +178,18 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-legalesign.group.list
+legalesign_sdk.document.list(group: "REPLACE_ME")
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-legalesign.group.list
+legalesign_sdk.document.list(group: "REPLACE_ME")
 
 # You can also splat a full Params class:
-params = Legalesign::GroupListParams.new
-legalesign.group.list(**params)
+params = LegalesignSDK::DocumentListParams.new(group: "REPLACE_ME")
+legalesign_sdk.document.list(**params)
 ```
 
 ### Enums
@@ -197,23 +198,23 @@ Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::E
 
 ```ruby
 # 1
-puts(Legalesign::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1)
+puts(LegalesignSDK::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1)
 
-# Revealed type: `T.all(Legalesign::DocumentCreateParams::PdfPasswordType, Integer)`
-T.reveal_type(Legalesign::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1)
+# Revealed type: `T.all(LegalesignSDK::DocumentCreateParams::PdfPasswordType, Integer)`
+T.reveal_type(LegalesignSDK::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
 # Using the enum constants preserves the tagged type information:
-legalesign.document.create(
-  pdf_password_type: Legalesign::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1,
+legalesign_sdk.document.create(
+  pdf_password_type: LegalesignSDK::DocumentCreateParams::PdfPasswordType::PDF_PASSWORD_TYPE_1,
   # …
 )
 
 # Literal values are also permissible:
-legalesign.document.create(
+legalesign_sdk.document.create(
   pdf_password_type: 1,
   # …
 )
