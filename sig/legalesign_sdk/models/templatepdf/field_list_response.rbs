@@ -1,0 +1,238 @@
+module LegalesignSDK
+  module Models
+    module Templatepdf
+      type field_list_response =
+        {
+          meta: LegalesignSDK::ListMeta,
+          objects: ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]
+        }
+
+      class FieldListResponse < LegalesignSDK::Internal::Type::BaseModel
+        attr_reader meta: LegalesignSDK::ListMeta?
+
+        def meta=: (LegalesignSDK::ListMeta) -> LegalesignSDK::ListMeta
+
+        attr_reader objects: ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]?
+
+        def objects=: (
+          ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]
+        ) -> ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]
+
+        def initialize: (
+          ?meta: LegalesignSDK::ListMeta,
+          ?objects: ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]
+        ) -> void
+
+        def to_hash: -> {
+          meta: LegalesignSDK::ListMeta,
+          objects: ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object]
+        }
+
+        type object =
+          {
+            ax: Float,
+            ay: Float,
+            bx: Float,
+            by: Float,
+            element_type: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::element_type,
+            page: Integer,
+            signer: Integer?,
+            align: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::align?,
+            fieldorder: Integer,
+            font_name: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name,
+            font_size: Integer,
+            hide_border: bool,
+            label: String,
+            label_extra: String,
+            logic_action: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action,
+            logic_group: String,
+            map_to: String,
+            optional: bool,
+            options: String,
+            substantive: bool,
+            validation: LegalesignSDK::Models::pdf_field_validation_enum?,
+            value: String
+          }
+
+        class Object < LegalesignSDK::Internal::Type::BaseModel
+          attr_accessor ax: Float
+
+          attr_accessor ay: Float
+
+          attr_accessor bx: Float
+
+          attr_accessor by: Float
+
+          attr_accessor element_type: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::element_type
+
+          attr_accessor page: Integer
+
+          attr_accessor signer: Integer?
+
+          attr_accessor align: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::align?
+
+          attr_reader fieldorder: Integer?
+
+          def fieldorder=: (Integer) -> Integer
+
+          attr_reader font_name: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name?
+
+          def font_name=: (
+            LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name
+          ) -> LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name
+
+          attr_reader font_size: Integer?
+
+          def font_size=: (Integer) -> Integer
+
+          attr_reader hide_border: bool?
+
+          def hide_border=: (bool) -> bool
+
+          attr_reader label: String?
+
+          def label=: (String) -> String
+
+          attr_reader label_extra: String?
+
+          def label_extra=: (String) -> String
+
+          attr_reader logic_action: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action?
+
+          def logic_action=: (
+            LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action
+          ) -> LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action
+
+          attr_reader logic_group: String?
+
+          def logic_group=: (String) -> String
+
+          attr_reader map_to: String?
+
+          def map_to=: (String) -> String
+
+          attr_reader optional: bool?
+
+          def optional=: (bool) -> bool
+
+          attr_reader options: String?
+
+          def options=: (String) -> String
+
+          attr_reader substantive: bool?
+
+          def substantive=: (bool) -> bool
+
+          attr_accessor validation: LegalesignSDK::Models::pdf_field_validation_enum?
+
+          attr_reader value: String?
+
+          def value=: (String) -> String
+
+          def initialize: (
+            ax: Float,
+            ay: Float,
+            bx: Float,
+            by: Float,
+            element_type: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::element_type,
+            page: Integer,
+            signer: Integer?,
+            ?align: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::align?,
+            ?fieldorder: Integer,
+            ?font_name: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name,
+            ?font_size: Integer,
+            ?hide_border: bool,
+            ?label: String,
+            ?label_extra: String,
+            ?logic_action: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action,
+            ?logic_group: String,
+            ?map_to: String,
+            ?optional: bool,
+            ?options: String,
+            ?substantive: bool,
+            ?validation: LegalesignSDK::Models::pdf_field_validation_enum?,
+            ?value: String
+          ) -> void
+
+          def to_hash: -> {
+            ax: Float,
+            ay: Float,
+            bx: Float,
+            by: Float,
+            element_type: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::element_type,
+            page: Integer,
+            signer: Integer?,
+            align: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::align?,
+            fieldorder: Integer,
+            font_name: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name,
+            font_size: Integer,
+            hide_border: bool,
+            label: String,
+            label_extra: String,
+            logic_action: LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action,
+            logic_group: String,
+            map_to: String,
+            optional: bool,
+            options: String,
+            substantive: bool,
+            validation: LegalesignSDK::Models::pdf_field_validation_enum?,
+            value: String
+          }
+
+          type element_type = :signature | :initials | :text | :admin
+
+          module ElementType
+            extend LegalesignSDK::Internal::Type::Enum
+
+            SIGNATURE: :signature
+            INITIALS: :initials
+            TEXT: :text
+            ADMIN: :admin
+
+            def self?.values: -> ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::element_type]
+          end
+
+          type align = 1 | 2 | 3
+
+          module Align
+            extend LegalesignSDK::Internal::Type::Enum
+
+            ALIGN_1: 1
+            ALIGN_2: 2
+            ALIGN_3: 3
+
+            def self?.values: -> ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::align]
+          end
+
+          type font_name =
+            :"" | :arial | :courier | :helvetica | :liberation | :verdana
+
+          module FontName
+            extend LegalesignSDK::Internal::Type::Enum
+
+            EMPTY: :""
+            ARIAL: :arial
+            COURIER: :courier
+            HELVETICA: :helvetica
+            LIBERATION: :liberation
+            VERDANA: :verdana
+
+            def self?.values: -> ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::font_name]
+          end
+
+          type logic_action = 1 | 2 | 3
+
+          module LogicAction
+            extend LegalesignSDK::Internal::Type::Enum
+
+            LOGIC_ACTION_1: 1
+            LOGIC_ACTION_2: 2
+            LOGIC_ACTION_3: 3
+
+            def self?.values: -> ::Array[LegalesignSDK::Models::Templatepdf::FieldListResponse::Object::logic_action]
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,25 @@
+module LegalesignSDK
+  module Models
+    type signer_send_reminder_params =
+      { text: String } & LegalesignSDK::Internal::Type::request_parameters
+
+    class SignerSendReminderParams < LegalesignSDK::Internal::Type::BaseModel
+      extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+      include LegalesignSDK::Internal::Type::RequestParameters
+
+      attr_reader text: String?
+
+      def text=: (String) -> String
+
+      def initialize: (
+        ?text: String,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        text: String,
+        request_options: LegalesignSDK::RequestOptions
+      }
+    end
+  end
+end

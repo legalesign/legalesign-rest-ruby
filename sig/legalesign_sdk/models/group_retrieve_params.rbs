@@ -1,0 +1,15 @@
+module LegalesignSDK
+  module Models
+    type group_retrieve_params =
+      {  } & LegalesignSDK::Internal::Type::request_parameters
+
+    class GroupRetrieveParams < LegalesignSDK::Internal::Type::BaseModel
+      extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+      include LegalesignSDK::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: LegalesignSDK::request_opts) -> void
+
+      def to_hash: -> { request_options: LegalesignSDK::RequestOptions }
+    end
+  end
+end
