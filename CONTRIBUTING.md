@@ -14,7 +14,7 @@ This will install all the required dependencies.
 
 ## Modifying/Adding code
 
-Most of the SDK is generated code. Modifications to code will be persisted between generations, but may result in merge conflicts between manual patches and changes from the generator. The generator will never modify the contents of `lib/legalesign/helpers/` and `examples/` directory.
+Most of the SDK is generated code. Modifications to code will be persisted between generations, but may result in merge conflicts between manual patches and changes from the generator. The generator will never modify the contents of `lib/legalesign_sdk/helpers/` and `examples/` directory.
 
 ## Adding and running examples
 
@@ -24,7 +24,7 @@ All files in the `examples/` directory are not modified by the generator and can
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../lib/legalesign"
+require_relative "../lib/legalesign_sdk"
 
 # ...
 ```
@@ -43,17 +43,17 @@ If you’d like to use the repository from source, you can either install from g
 To install via git in your `Gemfile`:
 
 ```ruby
-gem "legalesign", git: "https://www.github.com/legalesign/legalesign-rest-ruby"
+gem "legalesign-sdk", git: "https://www.github.com/stainless-sdks/legalesign-sdk-ruby"
 ```
 
 Alternatively, reference local copy of the repo:
 
 ```bash
-$ git clone -- 'https://www.github.com/legalesign/legalesign-rest-ruby' '<path-to-repo>'
+$ git clone -- 'https://www.github.com/stainless-sdks/legalesign-sdk-ruby' '<path-to-repo>'
 ```
 
 ```ruby
-gem "legalesign", path: "<path-to-repo>"
+gem "legalesign-sdk", path: "<path-to-repo>"
 ```
 
 ## Running commands

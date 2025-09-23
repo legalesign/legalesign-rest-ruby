@@ -1,0 +1,12 @@
+module LegalesignSDK
+  module Resources
+    class Pdf
+      def retrieve: (
+        String doc_id,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> StringIO
+
+      def initialize: (client: LegalesignSDK::Client) -> void
+    end
+  end
+end

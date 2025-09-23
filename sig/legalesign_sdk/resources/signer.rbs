@@ -1,0 +1,28 @@
+module LegalesignSDK
+  module Resources
+    class Signer
+      def retrieve: (
+        String signer_id,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> LegalesignSDK::Models::SignerRetrieveResponse
+
+      def get_access_link: (
+        String signer_id,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> nil
+
+      def retrieve_fields: (
+        String signer_id,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> LegalesignSDK::Models::signer_retrieve_fields_response
+
+      def send_reminder: (
+        String signer_id,
+        ?text: String,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> nil
+
+      def initialize: (client: LegalesignSDK::Client) -> void
+    end
+  end
+end

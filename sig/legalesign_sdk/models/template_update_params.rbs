@@ -1,0 +1,23 @@
+module LegalesignSDK
+  module Models
+    type template_update_params =
+      { body: String } & LegalesignSDK::Internal::Type::request_parameters
+
+    class TemplateUpdateParams < LegalesignSDK::Internal::Type::BaseModel
+      extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+      include LegalesignSDK::Internal::Type::RequestParameters
+
+      attr_accessor body: String
+
+      def initialize: (
+        body: String,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: String,
+        request_options: LegalesignSDK::RequestOptions
+      }
+    end
+  end
+end

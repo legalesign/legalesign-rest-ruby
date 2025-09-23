@@ -1,0 +1,38 @@
+module LegalesignSDK
+  module Models
+    type template_create_params =
+      { group: String, latest_text: String, title: String, user: String }
+      & LegalesignSDK::Internal::Type::request_parameters
+
+    class TemplateCreateParams < LegalesignSDK::Internal::Type::BaseModel
+      extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+      include LegalesignSDK::Internal::Type::RequestParameters
+
+      attr_accessor group: String
+
+      attr_accessor latest_text: String
+
+      attr_accessor title: String
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      def initialize: (
+        group: String,
+        latest_text: String,
+        title: String,
+        ?user: String,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        latest_text: String,
+        title: String,
+        user: String,
+        request_options: LegalesignSDK::RequestOptions
+      }
+    end
+  end
+end

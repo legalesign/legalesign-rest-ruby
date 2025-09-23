@@ -1,0 +1,17 @@
+module LegalesignSDK
+  module Models
+    module Templatepdf
+      type field_list_params =
+        {  } & LegalesignSDK::Internal::Type::request_parameters
+
+      class FieldListParams < LegalesignSDK::Internal::Type::BaseModel
+        extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+        include LegalesignSDK::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: LegalesignSDK::request_opts) -> void
+
+        def to_hash: -> { request_options: LegalesignSDK::RequestOptions }
+      end
+    end
+  end
+end

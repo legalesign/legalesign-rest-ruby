@@ -1,0 +1,82 @@
+module LegalesignSDK
+  module Models
+    type document_list_params =
+      {
+        group: String,
+        archived: String,
+        created_gt: Time,
+        email: String,
+        limit: Integer,
+        modified_gt: Time,
+        nosigners: String,
+        offset: Integer,
+        status: Integer
+      }
+      & LegalesignSDK::Internal::Type::request_parameters
+
+    class DocumentListParams < LegalesignSDK::Internal::Type::BaseModel
+      extend LegalesignSDK::Internal::Type::RequestParameters::Converter
+      include LegalesignSDK::Internal::Type::RequestParameters
+
+      attr_accessor group: String
+
+      attr_reader archived: String?
+
+      def archived=: (String) -> String
+
+      attr_reader created_gt: Time?
+
+      def created_gt=: (Time) -> Time
+
+      attr_reader email: String?
+
+      def email=: (String) -> String
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader modified_gt: Time?
+
+      def modified_gt=: (Time) -> Time
+
+      attr_reader nosigners: String?
+
+      def nosigners=: (String) -> String
+
+      attr_reader offset: Integer?
+
+      def offset=: (Integer) -> Integer
+
+      attr_reader status: Integer?
+
+      def status=: (Integer) -> Integer
+
+      def initialize: (
+        group: String,
+        ?archived: String,
+        ?created_gt: Time,
+        ?email: String,
+        ?limit: Integer,
+        ?modified_gt: Time,
+        ?nosigners: String,
+        ?offset: Integer,
+        ?status: Integer,
+        ?request_options: LegalesignSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        group: String,
+        archived: String,
+        created_gt: Time,
+        email: String,
+        limit: Integer,
+        modified_gt: Time,
+        nosigners: String,
+        offset: Integer,
+        status: Integer,
+        request_options: LegalesignSDK::RequestOptions
+      }
+    end
+  end
+end

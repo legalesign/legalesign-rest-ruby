@@ -150,7 +150,7 @@ multitask(:"build:gem") do
     sig/*
   GLOB
 
-  sh(*%w[gem build -- legalesign.gemspec])
+  sh(*%w[gem build -- legalesign_sdk.gemspec])
   rm_rf(ignore_file)
 end
 
