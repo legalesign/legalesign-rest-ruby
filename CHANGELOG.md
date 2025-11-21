@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.2.0 (2025-11-21)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/legalesign/legalesign-rest-ruby/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* handle thread interrupts in the core HTTP client ([09fce02](https://github.com/legalesign/legalesign-rest-ruby/commit/09fce02cd46c70e62aaebe3ce5db31265ac07b57))
+
+
+### Bug Fixes
+
+* absolutely qualified uris should always override the default ([accbe51](https://github.com/legalesign/legalesign-rest-ruby/commit/accbe517d8b7e34580c59f0abca767efb910d9af))
+* always send `filename=...` for multipart requests where a file is expected ([5813768](https://github.com/legalesign/legalesign-rest-ruby/commit/5813768c3908da5e30ea445a436b1717fadc0f5b))
+* better thread safety via early initializing SSL store during HTTP client creation ([ed77883](https://github.com/legalesign/legalesign-rest-ruby/commit/ed77883cea949f67ab390ef3dac4c73bc0681d60))
+* coroutine leaks from connection pool ([6c3463f](https://github.com/legalesign/legalesign-rest-ruby/commit/6c3463f441d4b806ef649968c6e6c8b21b2536cd))
+* shorten multipart boundary sep to less than RFC specificed max length ([40b68db](https://github.com/legalesign/legalesign-rest-ruby/commit/40b68dbad30504b67d6b0414f0e3a6db5b744d5f))
+* should not reuse buffers for `IO.copy_stream` interop ([a55c302](https://github.com/legalesign/legalesign-rest-ruby/commit/a55c302e8c10ecf93cea0fa83947a5aba26ec2b3))
+
+
+### Performance Improvements
+
+* faster code formatting ([965c16e](https://github.com/legalesign/legalesign-rest-ruby/commit/965c16efdfe71903a187923892a24a1ace2cede5))
+
+
+### Chores
+
+* allow fast-format to use bsd sed as well ([7761d66](https://github.com/legalesign/legalesign-rest-ruby/commit/7761d660ef68e49ac02068f322747682ba295fc2))
+* bump dependency version and update sorbet types ([fd8d531](https://github.com/legalesign/legalesign-rest-ruby/commit/fd8d5314d47b22b912990c757931a1a4fda8da35))
+* explicitly require "base64" gem ([ea768a1](https://github.com/legalesign/legalesign-rest-ruby/commit/ea768a157f48c9fc9ea665555d25371e07d7a6ed))
+* ignore linter error for tests having large collections ([6680ab3](https://github.com/legalesign/legalesign-rest-ruby/commit/6680ab334e2a95d5b6b8d14fb1e98d5af4961da4))
+* **internal:** codegen related update ([67df45b](https://github.com/legalesign/legalesign-rest-ruby/commit/67df45b7c847eb909ea593e9dd0832efdfdb1923))
+
 ## 0.1.0 (2025-09-23)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/legalesign/legalesign-rest-ruby/compare/v0.0.1...v0.1.0)
